@@ -1,0 +1,263 @@
+/* reset css */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html {
+    color-scheme: light dark;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* color scheme & font setup */
+:root {
+    --clr-accent: #050505;
+    --clr-background: #fafafa;
+    --clr-primary: #363c34;
+    --clr-secondary: #e3e8e4;
+    --clr-text: #848976;
+    --ff-base: 'DM Sans', sans-serif;
+    --ff-accent: 'DM Serif Display', serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --clr-accent: #fafafa;
+        --clr-background: #050505;
+        --clr-primary: #363c34;
+        --clr-secondary: #171c18;
+        --clr-text: #b5b8ad;
+    }
+}
+
+/* applying on element*/
+/* html, body { min-height: 100%; } */
+
+body {
+    font-family: var(--ff-base);
+    color: var(--clr-text);
+    width: min(100% - 3rem, 65ch);
+    margin-inline: auto;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--ff-accent);
+    color: var(--clr-accent);
+    text-wrap: balance;
+}
+
+a {
+    color: var(--clr-text);
+    text-decoration: none;
+}
+
+button {
+    padding: 15px 25px;
+    background-color: var(--clr-secondary);
+    color: var(--clr-accent);
+    /* border-radius: 50px; */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    color: var(--clr-background);
+    background-color: var(--clr-accent);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 0px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6rem;
+    text-align: center;
+}
+
+section {
+    padding-top: 1rem;
+}
+
+nav a {
+    padding-inline: 5px;
+    transition: all 0.3s ease 0s;
+}
+
+nav a:hover {
+    color: var(--clr-primary);
+}
+
+em {
+    color: var(--clr-text);
+    font-size: 0.9rem;
+}
+
+span {
+    font-size: 0.8rem;
+}
+
+/* applying on class */
+.logo {
+    color: var(--clr-accent);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.copyright {
+    padding: 1rem 0;
+}
+
+.index-intro {
+    padding: 11rem 0;
+}
+
+/* intro animation */
+.index-intro h1, .index-intro h3 {
+    display: block;
+    width: fit-content;
+    position:relative;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1s;
+}
+
+.index-intro h3 {
+    animation-delay: 2s;
+}
+
+.index-intro h1 span, .index-intro h3 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: var(--clr-accent);
+    animation: text_reveal_box 1s ease;
+    animation-delay: 0.5s;
+}
+
+.index-intro h3 span {
+    animation-delay: 1.5s;
+}
+
+/* Keyframes */
+@keyframes text_reveal_box {
+    50% {
+        width: 100%;
+        left: 0%;
+    }
+
+    100% {
+        width: 0%;
+        left: 100%;
+    }
+}
+
+@keyframes text_reveal {
+    100% {
+        color: var(--clr-accent);
+    }
+}
+
+.contact-intro {
+    padding: 7rem 0;
+}
+
+/* about page */
+.skill h4{
+    padding: 0.5rem 0;
+}
+
+.skill a {
+    padding: 2px 10px;
+    border-radius: 5px;
+    line-height: 2rem;
+    white-space: nowrap;
+    color: var(--clr-secondary);
+    background-color: var(--clr-primary);
+    transition: all 0.6s ease 0s;
+}
+
+.skill a:hover {
+    color: var(--clr-secondary);
+    background-color: var(--clr-text);
+}
+
+.half {
+    display: grid;
+    row-gap: 2rem;
+    column-gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+/* work page  */
+.grid {
+    display: grid;
+    row-gap: 2rem;
+    column-gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid img {
+    filter: grayscale(100%);
+    opacity: 0.8;
+    object-fit: cover;
+    aspect-ratio: 1;
+    margin-bottom: 0.5rem;
+    transition: all 0.6s ease 0s;
+}
+
+.grid img:hover {
+    scale: 1.1;
+    opacity: 1.0;
+    filter: grayscale(0%);
+}
+
+@media (max-width: 65ch) {
+    .grid, .half{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* contact page  */
+.link-button {
+    line-height: 3.2rem;
+}
+
+/* article page  */
+.tag-container a {
+    font-size: 0.8rem;
+    padding: 1px 5px;
+    cursor: pointer;
+    line-height: 1.5rem;
+    white-space: nowrap;
+    color: var(--clr-secondary);
+    background-color: var(--clr-primary);
+    transition: all 0.6s ease 0s;
+}
+
+.tag-container a:hover {
+    color: var(--clr-secondary);
+    background-color: var(--clr-text);
+}
+
+li {
+    margin: 1rem 0;
+}
