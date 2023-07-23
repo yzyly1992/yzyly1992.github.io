@@ -45,8 +45,10 @@ img {
 body {
     font-family: var(--ff-base);
     color: var(--clr-text);
+    background-color: var(--clr-background);
     width: min(100% - 3rem, 65ch);
     margin-inline: auto;
+    padding-top: 10rem;
 }
 
 h1, h2, h3, h4 {
@@ -76,10 +78,22 @@ button:hover {
 }
 
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--clr-background);
+    z-index: 1;
+}
+
+.header {
+    width: min(100% - 3rem, 65ch);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 4rem 0px;
+    padding: 4rem 0px 3rem 0px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 footer {
@@ -121,6 +135,11 @@ span {
 
 .copyright {
     padding: 1rem 0;
+}
+
+.underline {
+    text-decoration: solid underline 3px;
+    text-underline-offset: 10px;
 }
 
 .index-intro {
@@ -225,7 +244,7 @@ span {
 }
 
 .grid img:hover {
-    scale: 1.1;
+    scale: 1.05;
     opacity: 1.0;
     filter: grayscale(0%);
 }
