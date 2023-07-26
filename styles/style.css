@@ -20,22 +20,22 @@ img {
 
 /* color scheme & font setup */
 :root {
-    --clr-accent: #050505;
-    --clr-background: #fafafa;
-    --clr-primary: #363c34;
-    --clr-secondary: #e3e8e4;
-    --clr-text: #848976;
+    --clr-text: #1c021c;
+    --clr-background: #fef6fe;
+    --clr-accent: #ae0f5e;
+    --clr-secondary: #fac2c2;
+    --clr-primary: #dd1313;
     --ff-base: 'DM Sans', sans-serif;
     --ff-accent: 'DM Serif Display', serif;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --clr-accent: #fafafa;
+        --clr-text: #fafafa;
         --clr-background: #050505;
-        --clr-primary: #363c34;
-        --clr-secondary: #171c18;
-        --clr-text: #b5b8ad;
+        --clr-accent: #ae0f5e;
+        --clr-secondary: #2f0404;
+        --clr-primary: #f37272;
     }
 }
 
@@ -53,7 +53,6 @@ body {
 
 h1, h2, h3, h4 {
     font-family: var(--ff-accent);
-    color: var(--clr-accent);
     text-wrap: balance;
 }
 
@@ -65,8 +64,6 @@ a {
 button {
     padding: 15px 25px;
     background-color: var(--clr-secondary);
-    color: var(--clr-accent);
-    /* border-radius: 50px; */
     border: none;
     cursor: pointer;
     transition: all 0.3s ease 0s;
@@ -74,7 +71,7 @@ button {
 
 button:hover {
     color: var(--clr-background);
-    background-color: var(--clr-accent);
+    background-color: var(--clr-text);
 }
 
 header {
@@ -126,9 +123,12 @@ span {
     font-size: 0.8rem;
 }
 
+svg {
+    color: var(--clr-primary);
+}
+
 /* applying on class */
 .logo {
-    color: var(--clr-accent);
     font-weight: 700;
     font-size: 1.5rem;
 }
@@ -168,7 +168,7 @@ span {
     left: 0;
     height: 100%;
     width: 0%;
-    background-color: var(--clr-accent);
+    background-color: var(--clr-text);
     animation: text_reveal_box 1s ease;
     animation-delay: 0.5s;
 }
@@ -192,7 +192,7 @@ span {
 
 @keyframes text_reveal {
     100% {
-        color: var(--clr-accent);
+        color: var(--clr-text);
     }
 }
 
@@ -211,7 +211,7 @@ span {
     line-height: 2rem;
     white-space: nowrap;
     color: var(--clr-secondary);
-    background-color: var(--clr-primary);
+    background-color: var(--clr-accent);
     transition: all 0.6s ease 0s;
 }
 
@@ -259,7 +259,7 @@ span {
 
 /* contact page  */
 .link-button {
-    line-height: 3.2rem;
+    line-height: 3.25rem;
 }
 
 /* article page  */
@@ -270,7 +270,7 @@ span {
     line-height: 1.5rem;
     white-space: nowrap;
     color: var(--clr-secondary);
-    background-color: var(--clr-primary);
+    background-color: var(--clr-accent);
     transition: all 0.6s ease 0s;
 }
 
