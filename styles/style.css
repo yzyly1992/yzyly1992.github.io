@@ -20,21 +20,21 @@ img {
 
 /* color scheme & font setup */
 :root {
-    --clr-text: #1c021c;
-    --clr-background: #fef6fe;
-    --clr-accent: #ae0f5e;
-    --clr-secondary: #fac2c2;
-    --clr-primary: #dd1313;
+    --clr-text: #14213d;
+    --clr-background: #e5e5e5;
+    --clr-accent: #fca311;
+    --clr-secondary: #ffffff;
+    --clr-primary: #c2c2c2;
     --ff-base: 'DM Sans', sans-serif;
     --ff-accent: 'DM Serif Display', serif;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --clr-text: #fafafa;
-        --clr-background: #050505;
-        --clr-accent: #ae0f5e;
-        --clr-secondary: #2f0404;
+        --clr-text: #fefae0;
+        --clr-background: #606c38;
+        --clr-accent: #283618;
+        --clr-secondary: #dda15e;
         --clr-primary: #f37272;
     }
 }
@@ -146,7 +146,7 @@ svg {
 }
 
 .index-intro {
-    padding: 10rem 0;
+    padding: 11rem 0;
 }
 
 /* intro animation */
@@ -198,7 +198,7 @@ svg {
 }
 
 .contact-intro {
-    padding: 5rem 0;
+    padding: 7rem 0;
 }
 
 /* about page */
@@ -217,7 +217,7 @@ svg {
 }
 
 .skill a:hover {
-    color: var(--clr-secondary);
+    color: var(--clr-primary);
     background-color: var(--clr-text);
 }
 
@@ -276,7 +276,7 @@ svg {
 }
 
 .tag-container a:hover {
-    color: var(--clr-secondary);
+    color: var(--clr-primary);
     background-color: var(--clr-text);
 }
 
