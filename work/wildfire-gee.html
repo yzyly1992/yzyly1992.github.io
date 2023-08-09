@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildfire Prediction with GEE</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- nav bar -->
+    <header>
+        <div class="header">
+        <a href="/index.html" class="logo">David.</a>
+        <nav class="navbar">
+            <a href="/about.html">About</a>
+            <a href="/work.html">Work</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+        </div>
+    </header>
+
+    <!-- main section -->
+    <main>
+        <article>
+            <h1>Wildfire Prediction with Google Earth Engine and Machine Learning Methods</h1>
+            <br>
+            <em>David Yang / 2023 August</em>
+            <br>
+            <br>
+            <div class="tag-container">
+                <a>Google Earth Engine</a>
+                <a>Machine Learning</a>
+                <a>Deep Learning</a>
+                <a>CART</a>
+                <a>U-Net</a>
+            </div>
+            <br>
+            <p>In response to the escalating threat of wildfires, this project seeks to revolutionize wildfire prediction using Google Earth Engine and machine learning methods. By leveraging the vast geospatial data repository and processing capabilities of Google Earth Engine, coupled with advanced machine learning algorithms, the project aims to create accurate and proactive wildfire prediction models. These models will utilize historical climate data, soil moisture, vegetation indices, and previous wildfire records to predict the likelihood of future wildfire events. Through this innovative approach, the project endeavors to provide valuable insights for improved wildfire management, resource allocation, and community safety, contributing to more effective disaster mitigation strategies and ecological preservation.</p>
+            <br>
+            <figure>
+                <img src="https://i.ibb.co/jyKjX8z/wildfire-gee.webp" alt="gee-1">
+                <figcaption>Fig.1 - Wildfire Prediction Result from CART classification model</figcaption>
+            </figure>
+            <br>
+            <figure>
+                <img src="https://i.ibb.co/FnPkBLP/wf-malibu.webp" alt="gee-2">
+                <figcaption>Fig.2 - Wildfire Prediction Result from U-Net model: Malibu</figcaption>
+            </figure>
+            <br>
+            <figure>
+                <img src="https://i.ibb.co/QF3whh0/wf-beijing.webp" alt="gee-3">
+                <figcaption>Fig.3 - Wildfire Prediction Result from U-Net model: Beijing</figcaption>
+            </figure>
+            <br>
+            <em>*Note: This research project is completed independently during the TA position of Machine Learning Course by Prof. Ryan M. Rad.</em>
+            <br>
+            <br>
+            <br>
+            <button onclick="window.open('https://github.com/yzyly1992/wildfire-prediction-gee','_blank')">Github Repo ↗</button>
+            <button onclick="window.open('https://colab.research.google.com/drive/16xfgQc1zLe83Mh61lyk_BP34g0C1SHuf?usp=sharing','_blank')"> CART Colab ↗</button>
+            <button onclick="window.open('https://colab.research.google.com/drive/1EZjBS2-MiN61pOqtuxssZbFIP0pvHvCO?usp=sharing','_blank')"> U-Net Colab ↗</button>
+        </article>
+    </main>
+
+    <!-- social links -->
+    <footer>
+        <div class="copyright">
+            <p>Copyright &copy; 2023, Zhiyuan Yang - All Rights Reserved</p> 
+        </div>
+    </footer>
+    
+</body>
+</html>
