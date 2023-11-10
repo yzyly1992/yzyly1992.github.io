@@ -32,9 +32,9 @@ img {
 @media (prefers-color-scheme: dark) {
     :root {
         --clr-text: #fefae0;
-        --clr-background: #606c38;
-        --clr-accent: #283618;
-        --clr-secondary: #dda15e;
+        --clr-background: #386c6a;
+        --clr-accent: rgb(33, 52, 73);
+        --clr-secondary: rgb(214, 170, 68);
         --clr-primary: #f37272;
     }
 }
