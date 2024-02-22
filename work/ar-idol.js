@@ -1,28 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR Idol - WebAR Development</title>
-    <link rel="stylesheet" href="/styles/style.css">
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- nav bar -->
-    <header>
-        <div class="header">
-        <a href="/index.html" class="logo">David.</a>
-        <nav class="navbar">
-            <a href="/about.html">About</a>
-            <a href="/work.html">Work</a>
-            <a href="/contact.html">Contact</a>
-        </nav>
-        </div>
-    </header>
-
+export default {
+    template: `
     <!-- main section -->
     <main>
         <article>
@@ -67,13 +44,5 @@
             </div>
         </article>
     </main>
-
-    <!-- social links -->
-    <footer>
-        <div class="copyright">
-            <p>Copyright &copy; 2024, Zhiyuan Yang - All Rights Reserved</p> 
-        </div>
-    </footer>
-    
-</body>
-</html>
+`
+};

@@ -92,7 +92,7 @@ const articles = [
     {
         link: '/work/not-hotdog.html',
         image: 'https://i.ibb.co/s2LXrZQ/hotdog.webp',
-        alt: 'hotdog',
+        alt: 'not-hotdog',
         title: 'Not Hotdog App',
         technology: 'Pytorch',
         date: '2022 December',
@@ -119,7 +119,7 @@ const articles = [
     {
         link: '/work/bugtech-ar.html',
         image: 'https://i.ibb.co/XjP6RjZ/bugtech-r.webp',
-        alt: 'bugtech',
+        alt: 'bugtech-ar',
         title: 'BugTech AR',
         technology: 'Unity',
         date: '2021 Jan - 2022 Mar',
@@ -137,7 +137,7 @@ const articles = [
     {
         link: '/work/python-web.html',
         image: 'https://i.ibb.co/yYZFCmG/aodabo-o.webp',
-        alt: 'aodabo',
+        alt: 'python-web',
         title: 'Python Web Tutorial',
         technology: 'Python',
         date: '2019 Jan - 2020 May',

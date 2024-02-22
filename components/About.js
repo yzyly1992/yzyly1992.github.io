@@ -1,37 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David Yang | About</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
-</head>
-
-<body>
-    <!-- nav bar -->
-    <header>
-        <div class="header">
-        <a href="index.html" class="logo">David.</a>
-        <nav class="navbar">
-            <a class="underline" href="#">About</a>
-            <a href="work.html">Work</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-        </div>
-    </header>
-
-    <!-- main section -->
+export default {
+    name: 'About',
+    template: `
     <main>
         <h1>About Me</h1>
         <section class="half">
             <p>David (Zhiyuan) Yang is a Software Engineer and Computer Vision Researcher. He co-founded BugTech Augmented Reality Design Co. Ltd, where he provided cutting-edge AR solutions for small business owners. With a passion for innovation, David's career interests span across the fields of Machine Learning, Software Development, and Distributed Systems.</p>
-            <img src="https://i.ibb.co/FVpZPQ5/pwp-head-center.jpg" alt="pwp-head-center" style="max-height: 14rem;">
+            <img src="https://i.ibb.co/FVpZPQ5/pwp-head-center.jpg" alt="pwp-head-center" style="max-height: 14rem;"></img>
         </section>
-        <br><br>
+        <br></br>
+        <br></br>
         
         <h1>Experience</h1>
         <section>
@@ -49,7 +26,8 @@
             <em>2019.8 - 2021.1 / Berkeley, CA</em>
             <p>Develop an in-house webapp for digital asset management, and build data processing pipelines.</p>
         </section>
-        <br><br>
+        <br></br>
+        <br></br>
 
         <h1>Tech Stack</h1>
         <section class="skill">
@@ -99,7 +77,8 @@
                 <a>Azure</a>
             </div>
         </section>
-        <br><br>
+        <br></br>
+        <br></br>
 
         <h1>Education</h1>
         <section>
@@ -114,15 +93,8 @@
             <h4>Bachelor of Landscape Architecture @ Oklahoma State University</h4>
             <em>2013.9 - 2016.5 / Stillwater, OK</em>
         </section>
-        <br><br>
+        <br></br>
+        <br></br>
     </main>
-
-    <!-- social links -->
-    <footer>
-        <div class="copyright">
-            <p>Copyright &copy; 2024, Zhiyuan Yang - All Rights Reserved</p> 
-        </div>
-    </footer>
-    
-</body>
-</html>
+    `
+}

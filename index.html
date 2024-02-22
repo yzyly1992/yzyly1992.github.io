@@ -9,34 +9,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
-    <!-- <script src="https://cdn.jsdelivr.net/npm/kute.js@2.2.4/dist/kute.min.js"></script> -->
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/vue-router@4"></script>
+    <script src="scripts/script.js" type="module"></script>
 </head>
 
 <body>
-    <!-- nav bar -->
-    <header>
-        <div class="header">
-            <a href="#" class="logo">David.</a>
-            <nav class="navbar">
-                <a href="about.html">About</a>
-                <a href="work.html">Work</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- main section -->
-    <main class="index-intro">
-        <section>
-            <h1>Hi, I'm David Yang<span></span></h1>
-            <h3>Engineer, Researcher, Entrepreneur<span></span></h3>
-            <br>
-            <br>
-            <div class="link-button">
-                <button onclick="location.href='work.html'">See My Work</button>
-                <button onclick="location.href='contact.html'">Let's Talk</button>
+    <div id="app">
+        <!-- nav bar -->
+        <header>
+            <div class="header">
+                <a><router-link to="/" class="logo">David.</router-link></a>
+                <nav class="navbar">
+                    <a><router-link to="/about">About</router-link></a>
+                    <a><router-link to="/work">Work</router-link></a>
+                    <a><router-link to="/contact">Contact</router-link></a>
+                </nav>
             </div>
-        </section>
-    </main>
+        </header>
+
+        <!-- main section -->
+        <router-view></router-view>
+
+        <!-- social links -->
+        <footer>
+            <div class="copyright">
+                <p>Copyright &copy; 2024, Zhiyuan Yang - All Rights Reserved</p> 
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
