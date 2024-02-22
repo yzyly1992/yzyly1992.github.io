@@ -29,14 +29,12 @@ img {
     --ff-accent: 'DM Serif Display', serif;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --clr-text: #fefae0;
-        --clr-background: #386c6a;
-        --clr-accent: rgb(33, 52, 73);
-        --clr-secondary: rgb(214, 170, 68);
-        --clr-primary: rgb(243, 154, 20);
-    }
+[data-theme="dark"] {
+    --clr-text: #fefae0;
+    --clr-background: #386c6a;
+    --clr-accent: rgb(33, 52, 73);
+    --clr-secondary: rgb(214, 170, 68);
+    --clr-primary: rgb(243, 154, 20);
 }
 
 /* applying on element*/
@@ -107,6 +105,12 @@ section {
     padding-top: 1rem;
 }
 
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 nav a {
     padding-inline: 5px;
     transition: all 0.3s ease 0s;
@@ -123,10 +127,6 @@ em {
 
 span {
     font-size: 0.8rem;
-}
-
-svg {
-    color: var(--clr-primary);
 }
 
 /* applying on class */
@@ -332,4 +332,14 @@ caption {
 .category-container a:hover {
     color: var(--clr-primary);
     background-color: var(--clr-text);
+}
+
+.theme {
+    width: 1.6rem;
+    height: 1.6rem;
+    padding-left: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

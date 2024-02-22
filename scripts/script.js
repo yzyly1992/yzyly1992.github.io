@@ -31,8 +31,25 @@ const router = VueRouter.createRouter({
 // 5. Create and mount the root instance.
 const app = Vue.createApp({
   components: {
-    
-  }
+  },
+  data() {
+		return {
+			theme: localStorage.getItem("theme")
+		};
+	},
+	methods: {
+		toggleTheme() {
+			if (this.theme == "dark") {
+				this.theme = "light";
+				document.body.setAttribute("data-theme", "light");
+				localStorage.setItem("theme", "light");
+			} else {
+				this.theme = "dark";
+				document.body.setAttribute("data-theme", "dark");
+				localStorage.setItem("theme", "dark");
+			}
+		}
+	},
 })
 // Make sure to _use_ the router instance to make the
 // whole app router-aware.
