@@ -132,7 +132,7 @@ const articles = [
         title: 'PWP Asset Library',
         technology: 'React',
         date: '2020 April',
-        tag: ['fullstack', 'fontend', 'backend']
+        tag: ['fullstack', 'frontend', 'backend']
     },
     {
         link: '/work/python-web.html',
@@ -141,7 +141,7 @@ const articles = [
         title: 'Python Web Tutorial',
         technology: 'Python',
         date: '2019 Jan - 2020 May',
-        tag: ['fullstack', 'fontend', 'backend']
+        tag: ['fullstack', 'frontend', 'backend']
     },
     {
         link: '/work/time-travel.html',
@@ -150,7 +150,7 @@ const articles = [
         title: 'Time Traveler VR',
         technology: 'Unity',
         date: '2019 May',
-        tag: ['game', 'vr', 'cv']
+        tag: ['game', 'ar', 'cv']
     },
     {
         link: '/work/robot.html',
