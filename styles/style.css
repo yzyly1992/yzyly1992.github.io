@@ -247,7 +247,7 @@ svg {
 }
 
 .grid img:hover {
-    scale: 1.05;
+    scale: 1.02;
     opacity: 1.0;
     filter: grayscale(0%);
 }
@@ -294,9 +294,24 @@ caption {
     padding: 0.5rem;
 }
 
-.position {
+.category-container {
     margin-bottom: 3rem;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
+    gap: 0.3rem;
+}
+
+.category-container a {
+    margin: 0.2rem 0;
+    padding: 1px 8px;
+    line-height: 2rem;
+    border: 2px solid var(--clr-text);
+    cursor: pointer;
+    transition: all 0.6s ease 0s;
+}
+.category-container a:hover {
+    color: var(--clr-primary);
+    background-color: var(--clr-text);
 }
