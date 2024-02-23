@@ -236,6 +236,11 @@ span {
     align-items: center;
 }
 
+.head-photo {
+    margin-top: -5rem;
+    width:16rem;
+}
+
 /* work page  */
 .grid {
     display: grid;
@@ -263,6 +268,16 @@ span {
     .grid, .half{
         grid-template-columns: 1fr;
     }
+    .head-photo {
+        margin-top: 0;
+        width: 90%;
+    }
+}
+
+.secondary-text {
+    font-family: inherit;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
 }
 
 /* contact page  */
