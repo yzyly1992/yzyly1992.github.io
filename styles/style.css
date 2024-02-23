@@ -20,21 +20,21 @@ img {
 
 /* color scheme & font setup */
 :root {
-    --clr-text: #14213d;
-    --clr-background: #e5e5e5;
-    --clr-accent: #fca311;
-    --clr-secondary: #ffffff;
-    --clr-primary: #c2c2c2;
+    --clr-text: #210203;
+    --clr-background: #d3b99f;
+    --clr-accent: #6d98ba;
+    --clr-secondary: #cce3f8;
+    --clr-primary: #c17767;
     --ff-base: 'DM Sans', sans-serif;
     --ff-accent: 'DM Serif Display', serif;
 }
 
 [data-theme="dark"] {
-    --clr-text: #fefae0;
-    --clr-background: #386c6a;
-    --clr-accent: rgb(33, 52, 73);
-    --clr-secondary: rgb(214, 170, 68);
-    --clr-primary: rgb(243, 154, 20);
+    --clr-text: #fdf0d5;
+    --clr-background: #241b2e;
+    --clr-accent: #d81e5b;
+    --clr-secondary: #c6d8d3;
+    --clr-primary: #f0544f;
 }
 
 /* applying on element*/
@@ -69,8 +69,8 @@ button {
 }
 
 button:hover {
-    color: var(--clr-text);
-    background-color: var(--clr-secondary);
+    color: var(--clr-secondary);
+    background-color: var(--clr-accent);
 }
 
 header {
