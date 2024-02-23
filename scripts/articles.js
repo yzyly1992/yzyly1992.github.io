@@ -1,7 +1,7 @@
 const articles = [
     {
         link: '/work/lilidan.html',
-        image: 'https://i.ibb.co/R0WT4B1/lilidan-ico.webp',
+        image: 'https://i.ibb.co/vvrxyTx/lilidan-ico.webp',
         alt: 'lilidan',
         title: 'Lili & Dan eCom.',
         technology: 'Angular',
@@ -25,6 +25,15 @@ const articles = [
         technology: 'ViT',
         date: '2023 December',
         tag: ['ai', 'ml', 'cv']
+    },
+    {
+        link: '/work/portfolio.html',
+        image: 'https://i.ibb.co/VWhFBd5/port-ico.webp',
+        alt: 'portfolio',
+        title: 'Portfolio Website',
+        technology: 'Vue',
+        date: '2023 November',
+        tag: ['frontend']
     },
     {
         link: '/work/runway.html',

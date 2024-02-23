@@ -11,7 +11,7 @@ import Project from '/components/Project.js';
 // We'll talk about nested routes later.
 const routes = [
     { path: '/', component: Home, meta : {title: 'David Yang'} },
-    { path: '/about', component: About, meta : {title: 'David Yang - About Me'}},
+    { path: '/about', component: About, meta : {title: 'David Yang - About'}},
     { path: '/work', component: Work, meta : {title: 'David Yang - Work'}},
     { path: '/contact', component: Contact, meta : {title: 'David Yang - Contact'}},
     { path: '/work/:id', component: Project, meta : {title: 'David Yang - Project Detail'}},
@@ -26,6 +26,11 @@ const router = VueRouter.createRouter({
   // are using the hash history for simplicity here.
   history: VueRouter.createWebHashHistory(),
   routes, // short for `routes: routes`
+})
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title;
+  next();
 })
 
 // 5. Create and mount the root instance.
