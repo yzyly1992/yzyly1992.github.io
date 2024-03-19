@@ -5,7 +5,7 @@ export default {
         <h1>About Me</h1>
         <section class="half">
             <p>David (Zhiyuan) Yang is a Software Engineer and Computer Vision Researcher. He co-founded BugTech Augmented Reality Design Co. Ltd, where he provided cutting-edge AR solutions for small business owners. With a passion for innovation, David's career interests span across the fields of Machine Learning, Software Development, and Distributed Systems.</p>
-            <img class="head-photo" src="https://i.ibb.co/8c5PT32/Head-S-Trans.webp" alt="pwp-head-center"></img>
+            <img class="head-photo" src="https://i.ibb.co/F8HLPh6/Head-S-Trans-bg.webp" alt="pwp-head-center"></img>
         </section>
         <br></br>
         <br></br>
