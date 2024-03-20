@@ -39,19 +39,24 @@ const app = Vue.createApp({
   },
   data() {
 		return {
-			theme: localStorage.getItem("theme")
+			theme: window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light",
 		};
+	},
+	mounted() {
+		if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+			document.body.setAttribute("data-theme", "dark");
+		} else {
+			document.body.setAttribute("data-theme", "light");
+		}
 	},
 	methods: {
 		toggleTheme() {
 			if (this.theme == "dark") {
 				this.theme = "light";
 				document.body.setAttribute("data-theme", "light");
-				localStorage.setItem("theme", "light");
 			} else {
 				this.theme = "dark";
 				document.body.setAttribute("data-theme", "dark");
-				localStorage.setItem("theme", "dark");
 			}
 		}
 	},
