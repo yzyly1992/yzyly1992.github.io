@@ -34,7 +34,7 @@ export default {
             <br>
             <br>
             <div class="link-button">
-                <button>Published Paper ↗</button>
+                <button onclick="window.open('https://www.mdpi.com/2504-446X/8/6/225','_blank')">Published Paper (MDPI 2024) ↗</button>
             </div>
         </article>
     </main>

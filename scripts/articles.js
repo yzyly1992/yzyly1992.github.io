@@ -1,5 +1,13 @@
 const articles = [
     {
+        image: 'https://i.ibb.co/b39vGsr/lare-icon.webp',
+        alt: 'lare-app',
+        title: 'LARE APP',
+        technology: 'React Native & LLM',
+        date: '2024 May',
+        tag: ['fullstack', 'frontend', 'backend', 'ai', 'llm', 'ml']
+    },
+    {
         image: 'https://i.ibb.co/SvYqsFp/zzai-cover.webp',
         alt: 'zzai',
         title: 'Zzai.tech',
