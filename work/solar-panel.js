@@ -34,8 +34,8 @@ export default {
             <br>
             <br>
             <div class="link-button">
-                <button onclick="window.open('https://ieeecai.org/2024','_blank')>SSSwin Paper (IEEE CAI 2024) ↗</button>
-                <button onclick="window.open('https://arxiv.org/abs/2404.05180','_blank')>Dataset Paper (ArXiv 2024) ↗</button>
+                <button onclick="window.open('https://ieeexplore.ieee.org/abstract/document/10605566','_blank')">SSSwin Paper (IEEE CAI 2024) ↗</button>
+                <button onclick="window.open('https://arxiv.org/abs/2404.05180','_blank')">Dataset Paper (ArXiv 2024) ↗</button>
             </div>
         </article>
     </main>
