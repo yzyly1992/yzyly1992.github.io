@@ -12,8 +12,14 @@ export default {
         
         <h1>Experience</h1>
         <section>
+            <h4>Software Engineer @ Singular Hearing</h4>
+            <em>2023.3 - Current / Vancouver, BC</em>
+            <br></br>
+            <p class="secondary-text">Build and maintain an AI powered audio denoise web app using Next.js, TypeScript, Tailwind for front end; Node.js, AWS S3, AWS SageMaker, and PostgreSQL for back end.</p>
+        </section>
+        <section>
             <h4>Research Assistant @ Northeastern University</h4>
-            <em>2023.1 - Current / Vancouver, BC</em>
+            <em>2023.1 - 2024.8 / Vancouver, BC</em>
             <br></br>
             <p class="secondary-text">Propose an innovative end-to-end forest fire risk assessment system that combines the YOLOv8 object detection algorithm, UAV imagery, and visualization techniques. This system effectively assesses the risk of forest fires and presents the information in a user-friendly manner for a wider audience. [MDPI 2024]</p>
         </section>
