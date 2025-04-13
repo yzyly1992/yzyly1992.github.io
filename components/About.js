@@ -12,8 +12,20 @@ export default {
         
         <h1>Experience</h1>
         <section>
+            <h4>Software Dev Engineer @ AWS</h4>
+            <em>2025.2 - Current / Vancouver, BC</em>
+            <br></br>
+            <p class="secondary-text">Designed and maintained scalable, fault-tolerant AWS infrastructure to manage high-volume log delivery for internal services and external clients. Architected robust retry/redrive mechanisms to recover failed log transmissions, ensuring SLA-compliant delivery.</p>
+        </section>
+        <section>
+            <h4>Full Stack Software Engineer @ D3 Security</h4>
+            <em>2024.11 - 2025.2 / Vancouver, BC</em>
+            <br></br>
+            <p class="secondary-text">Enhanced platform functionality and user experience through feature development, including code block insertion function, multi-format file preview system, and shared URL generation system. Contributed to the beta launch of the next-generation product by implementing GenAI-driven features.</p>
+        </section>
+        <section>
             <h4>Software Engineer @ Singular Hearing</h4>
-            <em>2023.3 - Current / Vancouver, BC</em>
+            <em>2024.3 - 2024.11 / Vancouver, BC</em>
             <br></br>
             <p class="secondary-text">Build and maintain an AI powered audio denoise web app using Next.js, TypeScript, Tailwind for front end; Node.js, AWS S3, AWS SageMaker, and PostgreSQL for back end.</p>
         </section>
@@ -99,6 +111,7 @@ export default {
             <h4>Master of Computer Science @ Northeastern University (GPA:4.0/4.0)</h4>
             <em>2022.1 - 2023.12 / Vancouver, BC</em>
             <pre class="secondary-text">
+- Outstanding Graduate Research Award 
 - Outstanding Research Paper Award 
 - Research Apprenticeship Award
 - Research Assistant for Northern Airports Project

@@ -1,5 +1,21 @@
 const articles = [
     {
+        image: 'https://i.ibb.co/S7md4qzK/aiav-1.webp',
+        alt: 'aiav',
+        title: 'AI Arch Viz',
+        technology: 'GenAI & Next.js',
+        date: '2025 January',
+        tag: ['fullstack', 'frontend', 'backend', 'ai', 'llm', 'ml']
+    },
+    {
+        image: 'https://i.ibb.co/qMRv30sF/ww-icon-2.webp',
+        alt: 'web-whisper',
+        title: 'Web Whisper',
+        technology: 'JavaScript',
+        date: '2024 November',
+        tag: ['frontend', 'fullstack']
+    },
+    {
         image: 'https://i.ibb.co/b39vGsr/lare-icon.webp',
         alt: 'lare-app',
         title: 'LARE APP',
