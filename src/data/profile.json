@@ -1,0 +1,205 @@
+{
+  "name": "David (Zhiyuan) Yang",
+  "shortName": "David Yang",
+  "headline": "Software Dev Engineer @ AWS | AI & Computer Vision Researcher",
+  "title": "Engineer, Researcher, Entrepreneur",
+  "location": "Vancouver, BC, Canada",
+  "avatar": "https://i.ibb.co/F8HLPh6/Head-S-Trans-bg.webp",
+  "bio": "David (Zhiyuan) Yang is a Software Development Engineer at AWS and Computer Vision Researcher. With a passion for scalable distributed architecture and artificial intelligence, his expertise spans machine learning, computer vision, high-throughput cloud systems, and generative AI. Previously, he co-founded BugTech AR, delivering immersive augmented reality products, and holds dual Master's degrees in Computer Science (4.0 GPA, Northeastern University) and Landscape Architecture (RISD).",
+  "currentRole": {
+    "title": "Software Dev Engineer",
+    "company": "Amazon Web Services (AWS)",
+    "period": "2025.02 - Present",
+    "location": "Vancouver, BC",
+    "badge": "Current"
+  },
+  "stats": {
+    "gpa": "4.0",
+    "projects": "26+",
+    "papers": "6",
+    "citations": "59+"
+  },
+  "contact": {
+    "email": "yang.zhiyu@northeastern.edu",
+    "phone": "+1 (236)-979-5977",
+    "location": "Vancouver, BC, Canada",
+    "github": "https://github.com/yzyly1992",
+    "linkedin": "https://www.linkedin.com/in/david-zhiyuan-yang/",
+    "scholar": "https://scholar.google.com",
+    "resume": "/resume.pdf"
+  },
+  "experience": [
+    {
+      "role": "Software Dev Engineer",
+      "company": "Amazon Web Services (AWS)",
+      "period": "2025.02 - Present",
+      "location": "Vancouver, BC",
+      "current": true,
+      "description": "Designed and maintained scalable, fault-tolerant AWS infrastructure to manage high-volume log delivery for internal services and external clients. Architected robust retry/redrive mechanisms to recover failed log transmissions, ensuring SLA-compliant delivery.",
+      "technologies": ["AWS", "Java", "Distributed Systems", "CloudWatch", "SQS", "DynamoDB"]
+    },
+    {
+      "role": "Full Stack Software Engineer",
+      "company": "D3 Security",
+      "period": "2024.11 - 2025.02",
+      "location": "Vancouver, BC",
+      "current": false,
+      "description": "Enhanced platform functionality and user experience through feature development, including code block insertion function, multi-format file preview system, and shared URL generation system. Contributed to the beta launch of the next-generation product by implementing GenAI-driven features.",
+      "technologies": ["TypeScript", "React", "Python", "GenAI", "NodeJS", "Docker"]
+    },
+    {
+      "role": "Software Engineer",
+      "company": "Singular Hearing",
+      "period": "2024.03 - 2024.11",
+      "location": "Vancouver, BC",
+      "current": false,
+      "description": "Built and maintained an AI-powered audio denoise web app using Next.js, TypeScript, Tailwind for front end; Node.js, AWS S3, AWS SageMaker, and PostgreSQL for back end.",
+      "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "AWS SageMaker", "PostgreSQL", "Node.js"]
+    },
+    {
+      "role": "Research Assistant",
+      "company": "Northeastern University",
+      "period": "2023.01 - 2024.08",
+      "location": "Vancouver, BC",
+      "current": false,
+      "description": "Proposed an innovative end-to-end forest fire risk assessment system combining YOLOv8 object detection, UAV imagery, and geospatial visualization techniques. Published peer-reviewed research in MDPI Drones (2024).",
+      "technologies": ["Python", "PyTorch", "YOLOv8", "Computer Vision", "UAV", "MDPI 2024"]
+    },
+    {
+      "role": "Co-Founder & Technical Director",
+      "company": "BugTech Augmented Reality Design Co.",
+      "period": "2021.01 - 2022.04",
+      "location": "Shenzhen, Guangdong",
+      "current": false,
+      "description": "Designed and implemented an Augmented Reality game to achieve an interactive spatial AR experience, blending virtual spaces over physical reality. Won several entrepreneurial competition awards in 2021.",
+      "technologies": ["Unity", "C#", "ARKit", "ARCore", "Product Management"]
+    },
+    {
+      "role": "Landscape Designer & Tech Consultant",
+      "company": "PWP Landscape Architecture",
+      "period": "2019.08 - 2021.01",
+      "location": "Berkeley, CA",
+      "current": false,
+      "description": "Developed and maintained an in-house digital asset management system with React, Flask, and MongoDB, improving efficiency and streamlining digital asset organization.",
+      "technologies": ["React", "Flask", "MongoDB", "Python", "UI/UX"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master of Computer Science",
+      "institution": "Northeastern University",
+      "period": "2022.01 - 2023.12",
+      "location": "Vancouver, BC",
+      "gpa": "4.0 / 4.0",
+      "honors": [
+        "Outstanding Graduate Research Award",
+        "Outstanding Research Paper Award",
+        "Research Apprenticeship Award",
+        "Research Assistant for Northern Airports Project",
+        "Research Assistant for Wildfire Project",
+        "Teaching Assistant for Machine Learning Course",
+        "Teaching Assistant for Math Prep Course"
+      ]
+    },
+    {
+      "degree": "Master of Landscape Architecture",
+      "institution": "Rhode Island School of Design (RISD)",
+      "period": "2016.08 - 2019.06",
+      "location": "Providence, RI",
+      "honors": [
+        "RISD International Student Scholarship Award",
+        "Teaching Assistant for Eco Planning Course"
+      ]
+    },
+    {
+      "degree": "Bachelor of Landscape Architecture",
+      "institution": "Oklahoma State University",
+      "period": "2013.09 - 2016.05",
+      "location": "Stillwater, OK",
+      "honors": [
+        "Dean's Honor Roll",
+        "ASLA Honor Award"
+      ]
+    }
+  ],
+  "publications": [
+    {
+      "title": "Next-Gen Remote Airport Maintenance: UAV-Guided Inspection and Maintenance Using Computer Vision",
+      "authors": "Z Yang, S Nashik, C Huang, M Aibin, L Coria",
+      "venue": "Drones 8 (6), 225",
+      "year": "2024",
+      "citations": 22,
+      "link": "https://www.mdpi.com/2504-446X/8/6/225",
+      "doi": "10.3390/drones8060225",
+      "projectId": "runway"
+    },
+    {
+      "title": "Advancing Forest Fire Risk Evaluation: An Integrated Framework for Visualizing Area-Specific Forest Fire Risks Using UAV Imagery, Object Detection and Color Mapping Techniques",
+      "authors": "M Aibin, Y Li, R Sharma, J Ling, J Ye, J Lu, J Zhang, L Coria, X Huang, Z Yang",
+      "venue": "Drones 8 (2), 39",
+      "year": "2024",
+      "citations": 22,
+      "link": "https://www.mdpi.com/2504-446X/8/2/39",
+      "doi": "10.3390/drones8020039",
+      "projectId": "wildfire"
+    },
+    {
+      "title": "Beyond sRGB: Optimizing Object Detection with Diverse Color Spaces for Precise Wildfire Risk Assessment",
+      "authors": "Z Yang, S Cao, M Aibin",
+      "venue": "Remote Sensing 17 (9), 1503",
+      "year": "2025",
+      "citations": 10,
+      "link": "https://www.mdpi.com/2072-4292/17/9/1503",
+      "doi": "10.3390/rs17091503",
+      "projectId": "beyond-srgb"
+    },
+    {
+      "title": "GloSoFarID: Global multispectral dataset for Solar Farm IDentification in satellite imagery",
+      "authors": "Z Yang, R Rad",
+      "venue": "arXiv preprint arXiv:2404.05180",
+      "year": "2024",
+      "citations": 4,
+      "link": "https://arxiv.org/abs/2404.05180",
+      "doi": "10.48550/arXiv.2404.05180",
+      "projectId": "solar-panel"
+    },
+    {
+      "title": "SSSwin: Sequential Spectral Swin Transformer for Solar Panel Mapping in Satellite Imagery",
+      "authors": "Z Yang, R Rad",
+      "venue": "2024 IEEE Conference on Artificial Intelligence (CAI), 1334-1339",
+      "year": "2024",
+      "citations": 1,
+      "link": "https://ieeexplore.ieee.org/abstract/document/10605566",
+      "doi": "10.1109/CAI59869.2024.00236",
+      "projectId": "solar-panel"
+    },
+    {
+      "title": "Pixel to Geocoordinate Mapping in Oblique and Nadir UAV Imagery",
+      "authors": "M Aibin, S Cao, V Wu, Z Yang",
+      "venue": "2026 IEEE International Conference on Image Processing (ICIP), 1-6",
+      "year": "2026",
+      "citations": 0,
+      "link": "https://ieeexplore.ieee.org/document/11630110/",
+      "doi": "10.1109/icip61757.2026.11630110",
+      "projectId": "pixel-to-geocoordinate"
+    }
+  ],
+  "skillCategories": [
+    {
+      "category": "Programming Languages",
+      "skills": ["Python", "Java", "JavaScript", "TypeScript", "C++", "C#", "SQL", "Bash", "Swift", "PHP"]
+    },
+    {
+      "category": "AI, ML & Computer Vision",
+      "skills": ["PyTorch", "TensorFlow", "OpenCV", "YOLOv8", "Vision Transformers (ViT)", "GenAI / LLMs", "Stable Diffusion", "scikit-learn", "NumPy", "Keras"]
+    },
+    {
+      "category": "Distributed Systems & Cloud",
+      "skills": ["AWS (S3, SageMaker, SQS, DynamoDB, EC2)", "Docker", "Kubernetes", "GCP", "Azure", "Message Queues", "CI/CD", "Fault Tolerance"]
+    },
+    {
+      "category": "Full Stack & Web Technologies",
+      "skills": ["Vue 3", "React", "Next.js", "React Native", "SvelteKit", "Node.js", "Flask", "Django", "SpringBoot", "Tailwind CSS"]
+    }
+  ]
+}

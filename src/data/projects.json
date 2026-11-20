@@ -1,0 +1,1011 @@
+[
+  {
+    "id": "pixel-to-geocoordinate",
+    "title": "Pixel to Geocoordinate UAV Mapping",
+    "fullTitle": "Pixel to Geocoordinate Mapping in Oblique and Nadir UAV Imagery",
+    "technology": "UAV Photogrammetry & ML Offset Model",
+    "date": "2026 September",
+    "coverImage": "https://i.ibb.co/x8r5zWVX/aibin5-p6-aibin-small.gif",
+    "category": "cv",
+    "tags": [
+      "cv",
+      "computer vision",
+      "uav",
+      "drone",
+      "photogrammetry",
+      "georeferencing",
+      "nadir",
+      "oblique",
+      "machine learning",
+      "gps",
+      "wgs84",
+      "ieee icip 2026"
+    ],
+    "displayTags": [
+      "IEEE ICIP 2026",
+      "Computer Vision",
+      "UAV Photogrammetry",
+      "Geodesic Mapping",
+      "Oblique & Nadir",
+      "Machine Learning"
+    ],
+    "summary": "A practical pipeline bridging 2D pixel detections from nadir and oblique UAV drone imagery to high-precision 3D global geocoordinates (WGS84 GPS).",
+    "featured": true,
+    "links": [
+      {
+        "title": "IEEE Publication (ICIP 2026)",
+        "url": "https://ieeexplore.ieee.org/document/11630110/"
+      },
+      {
+        "title": "DOI Link (10.1109/icip61757.2026.11630110)",
+        "url": "https://doi.org/10.1109/icip61757.2026.11630110"
+      }
+    ],
+    "contentHtml": "<br>\n    <p>Translating 2D pixel-level object detections from Unmanned Aerial Vehicle (UAV) imagery into accurate 3D global geocoordinates (latitude, longitude, and elevation in WGS84) is a fundamental prerequisite for drone-based emergency response, wildfire tracking, search-and-rescue, and infrastructure inspection.</p>\n    <br>\n    <p>While nadir imagery (captured looking straight down at 90°) offers relatively uniform Ground Sample Distance (GSD), oblique imagery (captured at angles between 30° and 45°) provides critical lateral visibility for tree trunks, building facades, and steep terrains. However, oblique viewpoints introduce drastic perspective distortion, variable spatial footprints across the frame, altitude uncertainties, and orientation/gimbal sensor noise.</p>\n    <br>\n    <h3>Methodology: End-to-End Georeferencing Pipeline</h3>\n    <br>\n    <p>This paper presents a lightweight, computationally practical pipeline that achieves sub-11m geolocation accuracy without requiring exhaustive Structure-from-Motion (SfM) 3D point cloud reconstruction:</p>\n    <ul>\n        <li><strong>Camera Geometry & Collinearity Back-Projection</strong>: Combines calibrated camera intrinsics (focal length, principal point) and UAV extrinsic telemetry (GPS position, roll, pitch, yaw) to project pixel rays into world coordinates.</li>\n        <li><strong>Digital Elevation Model (DEM) Sampling</strong>: Intersects projected rays with real-world topography rather than assuming a flat ground plane, eliminating elevation-induced horizontal parallax error.</li>\n        <li><strong>Machine Learning Offset Correction Model</strong>: Trains a lightweight offset model on flight telemetry residuals to learn and eliminate systematic gimbal bias, sensor lag, and aerodynamic drift.</li>\n    </ul>\n    <br>\n    <h3>Empirical Evaluation</h3>\n    <br>\n    <p>The system was tested extensively across 36 ground control targets under both nadir and oblique drone flights using five rigorous spatial metrics (geodesic distance using the Haversine formula, Circular Error Probable [CEP50], spatial error heatmaps, cluster compactness, and directional decomposition):</p>\n    <ul>\n        <li>Raw flat-plane projection yielded an average geodesic error of <strong>27.19 m</strong>.</li>\n        <li>Incorporating DEM elevation sampling reduced the average error to <strong>20.21 m</strong>.</li>\n        <li>Deploying the machine learning offset model further reduced the mean error to <strong>10.39 m</strong> with significantly tighter variance and lower CEP50.</li>\n    </ul>\n    <br>\n    <figure>\n        <img src=\"https://i.ibb.co/x8r5zWVX/aibin5-p6-aibin-small.gif\" alt=\"geocoordinate-mapping-diagram\">\n        <figcaption>Example of prediction cluster compactness showing how predictions for the same target cluster spatially.</figcaption>\n    </figure>\n    <br>\n    <em>*Note: This research was authored by Michal Aibin, Suchang Cao, Victor Wu, and Zhiyuan Yang, published in the 2026 IEEE International Conference on Image Processing (ICIP), pages 1–6.</em>\n    <br>"
+  },
+  {
+    "id": "beyond-srgb",
+    "title": "Beyond sRGB - Color Space Wildfire Detection",
+    "fullTitle": "Beyond sRGB: Optimizing Object Detection with Diverse Color Spaces for Precise Wildfire Risk Assessment",
+    "technology": "Log RGB & YOLO11 / Transformers",
+    "date": "2025 April",
+    "coverImage": "https://www.mdpi.com/remotesensing/remotesensing-17-01503/article_deploy/html/images/remotesensing-17-01503-g001.png",
+    "category": "ai",
+    "tags": [
+      "ai",
+      "cv",
+      "computer vision",
+      "object detection",
+      "yolo",
+      "yolo11",
+      "co-detr",
+      "transformers",
+      "color spaces",
+      "log rgb",
+      "linear rgb",
+      "wildfire",
+      "uav",
+      "remote sensing",
+      "mdpi 2025"
+    ],
+    "displayTags": [
+      "Remote Sensing 2025",
+      "Computer Vision",
+      "Color Spaces",
+      "YOLO11",
+      "CO-DETR",
+      "Log RGB",
+      "UAV Drone"
+    ],
+    "summary": "Investigates diverse color spaces (Log RGB, Linear RGB, XYZ, LMS, D-Log) with vision transformers & YOLO11 for early wildfire risk detection, achieving +27.16% mAP.",
+    "featured": true,
+    "links": [
+      {
+        "title": "Published Paper (Remote Sensing 2025)",
+        "url": "https://www.mdpi.com/2072-4292/17/9/1503"
+      },
+      {
+        "title": "DOI Link (10.3390/rs17091503)",
+        "url": "https://doi.org/10.3390/rs17091503"
+      }
+    ],
+    "contentHtml": "<br>\n    <p>Forest fire risk assessment and early prevention are critical topics in environmental management and disaster mitigation. The predominant methodology relies on unmanned aerial vehicle (UAV/drone) imagery paired with deep learning-based object detection models. However, standard drone photography almost universally processes images into the <strong>sRGB</strong> color space through standard Image Signal Processing (ISP) pipelines.</p>\n    <br>\n    <p>While sRGB is optimized for human visual perception, its non-linear tone mapping and compression often strip away or compress subtle physical nuances—such as fine-grained light interactions with vegetation, canopy moisture loss, and dead wood—that are vital for computer vision algorithms tracking wildfire hazards.</p>\n    <br>\n    <h3>Core Contributions & Methodology</h3>\n    <br>\n    <p>In this research, we systematically investigate the impact of six distinct color spaces on state-of-the-art vision transformer models (such as <strong>CO-DETR</strong> and <strong>DDQ-DETR</strong>) and the latest convolutional detector (<strong>YOLO11</strong>) for tree condition and wildfire hazard detection:</p>\n    <ul>\n        <li><strong>Linear RGB</strong>: Preserves the direct physical linear interactions of light with natural forest surfaces before gamma compression.</li>\n        <li><strong>Log RGB</strong>: Expands dynamic range and offers superior illumination invariance across changing environmental conditions and sunlight angles.</li>\n        <li><strong>XYZ & LMS</strong>: Colorimetric and human cone-response representations decoupling luminance from chromatic components.</li>\n        <li><strong>D-Log</strong>: Camera-native logarithmic profile preserving highlight and shadow details across broad sensor latitudes.</li>\n    </ul>\n    <br>\n    <h3>Quantitative Results & Impact</h3>\n    <br>\n    <p>Our rigorous experiments demonstrate that alternative color spaces dramatically outperform conventional sRGB:</p>\n    <ul>\n        <li><strong>Log RGB achieved a 27.16% improvement in mean average precision ($\text{mAP}_{50}$)</strong> over standard sRGB.</li>\n        <li><strong>Log RGB delivered a 34.44% gain in mean average recall ($\text{mAR}$)</strong>, minimizing missed hazardous fuel targets.</li>\n        <li>Linear RGB also consistently outperformed sRGB, confirming that preserving radiometric linearity aids feature representations in deep networks.</li>\n    </ul>\n    <br>\n    <figure>\n        <img src=\"https://www.mdpi.com/remotesensing/remotesensing-17-01503/article_deploy/html/images/remotesensing-17-01503-g001.png\" alt=\"wildfire-pipeline\" referrerpolicy=\"no-referrer\">\n        <figcaption>Fig. 1 - Advanced pipeline for UAV wildfire risk assessment with diverse color space transformations (Remote Sensing 2025)</figcaption>\n    </figure>\n    <br>\n    <figure>\n        <img src=\"https://www.mdpi.com/remotesensing/remotesensing-17-01503/article_deploy/html/images/remotesensing-17-01503-g002.png\" alt=\"color-spaces-sample\" referrerpolicy=\"no-referrer\">\n        <figcaption>Fig. 2 - Dataset sample representation across 6 diverse color spaces (sRGB, Linear RGB, Log RGB, XYZ, LMS, D-Log)</figcaption>\n    </figure>\n    <br>\n    <figure>\n        <img src=\"https://www.mdpi.com/remotesensing/remotesensing-17-01503/article_deploy/html/images/remotesensing-17-01503-g003.png\" alt=\"ddq-detr-architecture\" referrerpolicy=\"no-referrer\">\n        <figcaption>Fig. 3 - DDQ-DETR transformer model architecture evaluated for hazard classification</figcaption>\n    </figure>\n    <br>\n    <figure>\n        <img src=\"https://www.mdpi.com/remotesensing/remotesensing-17-01503/article_deploy/html/images/remotesensing-17-01503-g005.png\" alt=\"evaluation-metrics\" referrerpolicy=\"no-referrer\">\n        <figcaption>Fig. 4 - Quantitative evaluation: Comparison of mAP and mAR performance across color spaces</figcaption>\n    </figure>\n    <br>\n    <em>*Note: This research was authored by Zhiyuan Yang, Suchang Cao, and Prof. Michał Aibin, published in MDPI Remote Sensing 17(9), 1503 (April 2025), cited by 10+.</em>\n    <br>"
+  },
+  {
+    "id": "aiav",
+    "title": "AI Arch Viz",
+    "fullTitle": "AI Arch Viz",
+    "technology": "GenAI & Next.js",
+    "date": "2025 January",
+    "coverImage": "https://i.ibb.co/S7md4qzK/aiav-1.webp",
+    "category": "ai",
+    "tags": [
+      "backend",
+      "ml",
+      "ai",
+      "frontend",
+      "next.js",
+      "genai",
+      "llm",
+      "ai image generation",
+      "web application",
+      "fullstack",
+      "stable diffusion"
+    ],
+    "displayTags": [
+      "Web Application",
+      "AI Image Generation",
+      "Stable Diffusion",
+      "Next.js",
+      "GenAI"
+    ],
+    "summary": "AIAV (AI Arch Viz) is an AI rendering platform developed to assist architects and interior designers in optimizing their workflow by generating renders and r...",
+    "featured": true,
+    "links": [
+      {
+        "title": "Official Website",
+        "url": "https://aiav.tech/"
+      }
+    ],
+    "contentHtml": "<br><p>AIAV (AI Arch Viz) is an AI rendering platform developed to assist architects and interior designers in optimizing their workflow by generating renders and redesign options for exterior and interior designs within seconds, rather than hours.</p>\n        <br>\n        <p>Four Modes, One Render Solution, Cover all your rendering needs with AIAV</p>\n        <ul>\n            <li>RENDER -> Generate professional-grade renderings from any media!</li>\n            <li>DETAIL -> Enrich renderings with unlimited realistic details and textures.</li>\n            <li>STYLE -> Define the vibe and atmosphere of your renderings with various styles.</li>\n            <li>UPSCALE -> Enhance the quality and resolution of the renderings with AI upscaling.</li>\n        </ul>\n        <br><figure>\n            <img src=\"https://i.ibb.co/S7md4qzK/aiav-1.webp\" alt=\"aiav-cover\">\n            <figcaption>Fig.1 - Cover Page</figcaption>\n        </figure>\n        <br>\n        <figure>\n            <img src=\"https://i.ibb.co/CKbk8hw3/aiav-2.webp\" alt=\"aiav-preview\">\n            <figcaption>Fig.2 - Feature Preview</figcaption>\n        </figure>\n        <br>\n        <em>*Note: This is a side project developed independently.</em>\n        <br>"
+  },
+  {
+    "id": "web-whisper",
+    "title": "Web Whisper",
+    "fullTitle": "Web Whisper",
+    "technology": "JavaScript",
+    "date": "2024 November",
+    "coverImage": "https://i.ibb.co/qMRv30sF/ww-icon-2.webp",
+    "category": "fullstack",
+    "tags": [
+      "product",
+      "frontend",
+      "chrome extention",
+      "fullstack",
+      "javascript",
+      "text2speech"
+    ],
+    "displayTags": [
+      "Chrome Extention",
+      "Product",
+      "JavaScript",
+      "Text2Speech"
+    ],
+    "summary": "Listen to your favorite articles, blogs, and web content on-the-go. No more eye strain, just pure audio bliss.",
+    "featured": true,
+    "links": [
+      {
+        "title": "Official Website",
+        "url": "https://webwhisper.online/"
+      }
+    ],
+    "contentHtml": "<br><p>Listen to your favorite articles, blogs, and web content on-the-go. No more eye strain, just pure audio bliss.</p>\n           <br>\n        <h2>Main Features</h2>\n        <ul>\n            <li>🔃 <strong>Instant Conversion</strong>: Convert any webpage to audio with just one click. It's that simple and fast!</li>\n            <li>🏄‍♂️ <strong>Works Offline</strong>: No internet? No problem. Once added to the playlist, you can listen offline.</li>\n            <li>🎙️ <strong>Natural Voice</strong>: Enjoy high-quality, natural-sounding voices that make listening a pleasure.</li>\n            <li>📜 <strong>Playlist Feature</strong>: Add multiple webpages to your playlist and listen to them later, anytime.</li>\n            <li>⚡ <strong>Free, Fast, Lightweight</strong>: ~48kB Package Size</li>\n            <li>🔠 <strong>Easy-to-Use Interface</strong>: Web Whisper's intuitive interface makes it simple for anyone to convert web content to audio.</li>\n        </ul>\n        <br>\n        <h2>Smart and Robust Listening Experience</h2>\n        <p>Experience seamless, high-quality audio conversion with Web Whisper. The smart features ensure that you get the most personalized and efficient listening experience.</p>\n        <ul>\n            <li>🤖 Experimental built-in AI</li>\n            <li>🏳️‍🌈 Auto language detection</li>\n            <li>🏄‍♂️ Offline listening capabilities</li>\n        </ul>\n        <br><figure>\n            <img src=\"https://ph-files.imgix.net/a5ec0e56-344d-473f-b73a-0a4b17184b39.png\" alt=\"ww-cover\">\n            <figcaption>Fig.1 - Cover Page</figcaption>\n        </figure>\n        <br>\n        <figure>\n            <img src=\"https://ph-files.imgix.net/15fceffa-46e1-4656-abaf-ba0a6684a26e.png\" alt=\"ww-preview\">\n            <figcaption>Fig.2 - Interface</figcaption>\n        </figure>\n        <br>\n        <em>*Note: This is a side project developed independently.</em>\n        <br>"
+  },
+  {
+    "id": "lare-app",
+    "title": "LARE APP",
+    "fullTitle": "LARE APP",
+    "technology": "React Native & LLM",
+    "date": "2024 May",
+    "coverImage": "https://i.ibb.co/b39vGsr/lare-icon.webp",
+    "category": "ai",
+    "tags": [
+      "product",
+      "backend",
+      "firebase",
+      "ml",
+      "ai",
+      "frontend",
+      "mobile application",
+      "llm",
+      "llamaindex",
+      "rag",
+      "react native",
+      "fullstack"
+    ],
+    "displayTags": [
+      "Mobile Application",
+      "Product",
+      "React Native",
+      "Firebase",
+      "LLM",
+      "Llamaindex",
+      "RAG"
+    ],
+    "summary": "🌿 Introducing LARE APP - Your Ultimate Companion to Ace the Landscape Architect Registration Exam (LARE) 🌿",
+    "featured": true,
+    "links": [
+      {
+        "title": "Official Website",
+        "url": "https://lareapp.online"
+      }
+    ],
+    "contentHtml": "<br><p>🌿 Introducing LARE APP - Your Ultimate Companion to Ace the Landscape Architect Registration Exam (LARE) 🌿</p>\n        <br>\n        <p>As a former landscape designer, I understand the challenges my peers face when preparing for the LARE exam. That's why I'm thrilled to announce the beta release of LARE APP - an innovative tool in LARE preparation!</p>\n        <br>\n        <p>Designed by a landscape designer-turned-software engineer, LARE APP is here to revolutionize your study experience with:</p>\n        <ul>\n            <li>📚 Over 400 quiz questions covering all the exam essentials</li>\n            <li>🧠 LARE Expert AI helping you better understand the question</li>\n            <li>📝 Four study sections perfectly aligned with the latest LARE blueprint</li>\n            <li>🔍 Four study modes tailored to your preferences and schedule</li>\n            <li>🔄 Continuous updates and expansion of our quiz library to keep your prep on point</li>\n        </ul>\n\n        <p>🚀 Ready to take your LARE prep to the next level? Join our beta testing program and be the first to experience LARE APP!</p>\n        <br>\n        <p>🌟 Sign up now at <a href=\"https://lareapp.online\" target=\"_blank\">lareapp.online</a> and get exclusive access to our beta version! 🌟</p>\n        <br><figure>\n            <img src=\"https://i.ibb.co/1KmkcpB/lare-cover.webp\" alt=\"lare-cover\">\n            <figcaption>Fig.1 - Cover Page</figcaption>\n        </figure>\n        <br>\n        <em>*Note: This is a side project developed independently.</em>\n        <br>"
+  },
+  {
+    "id": "zzai",
+    "title": "Zzai.tech",
+    "fullTitle": "Zzai Tech Blog Website",
+    "technology": "SvelteKit",
+    "date": "2024 March",
+    "coverImage": "https://i.ibb.co/SvYqsFp/zzai-cover.webp",
+    "category": "fullstack",
+    "tags": [
+      "cloudflare",
+      "blog website",
+      "backend",
+      "typescript",
+      "d1 database",
+      "multilingual",
+      "frontend",
+      "svelte",
+      "sveltekit",
+      "fullstack",
+      "ssr"
+    ],
+    "displayTags": [
+      "Blog Website",
+      "Svelte",
+      "SvelteKit",
+      "Typescript",
+      "SSR",
+      "D1 Database",
+      "Cloudflare",
+      "Multilingual"
+    ],
+    "summary": "This project aims to design and develop a full-stack tech blog website using SvelteKit, Cloudflare Pages, and Works and D1 Database. The project is focused o...",
+    "featured": true,
+    "links": [
+      {
+        "title": "Official Website",
+        "url": "https://zzai.tech"
+      },
+      {
+        "title": "Chinese Version",
+        "url": "https://zzai.tech/cn"
+      }
+    ],
+    "contentHtml": "<br><p>This project aims to design and develop a full-stack tech blog website using SvelteKit, Cloudflare Pages, and Works and D1 Database. The project is focused on integrating modern web design principles for the user interface and enabling Server-Side Rendering (SSR) to optimize SEO for the website. It also supports multiple languages in both content and UI, making it friendly for audiences from diverse backgrounds</p>\n        <br>\n        <figure>\n            <img src=\"https://i.ibb.co/SvYqsFp/zzai-cover.webp\" alt=\"zzai-cover\">\n            <figcaption>Fig.1 - Cover Page</figcaption>\n        </figure>\n        <br>\n        <figure>\n            <img src=\"https://i.ibb.co/W2yzLK5/zzai-home.webp\" alt=\"zzai-home\">\n            <figcaption>Fig.2 - Home Page</figcaption>\n        </figure>\n        <br>\n        <figure>\n            <img src=\"https://i.ibb.co/PgBFGrG/zzai-post.webp\" alt=\"zzai-post\">\n            <figcaption>Fig.3 - Blog Page</figcaption>\n        </figure>\n        <br>\n        <figure>\n            <img src=\"https://i.ibb.co/6Z689x6/zzai-cn-home.webp\" alt=\"zzai-cn-home\">\n            <figcaption>Fig.4 - Chinese Version Home Page</figcaption>\n        </figure>\n        <br>\n        <em>*Note: This is a side project developed independently.</em>\n        <br>"
+  },
+  {
+    "id": "lilidan",
+    "title": "Lili & Dan eCom.",
+    "fullTitle": "Lili & Dan eCommerce Website",
+    "technology": "Angular",
+    "date": "2024 February",
+    "coverImage": "https://i.ibb.co/vvrxyTx/lilidan-ico.webp",
+    "category": "fullstack",
+    "tags": [
+      "scss",
+      "ecommerce website",
+      "paypal api",
+      "backend",
+      "typescript",
+      "node.js",
+      "frontend",
+      "angular",
+      "fullstack"
+    ],
+    "displayTags": [
+      "eCommerce Website",
+      "Angular",
+      "Typescript",
+      "SCSS",
+      "Node.js",
+      "Paypal API"
+    ],
+    "summary": "This project offers an engaging and user-friendly eCommerce platform tailored to deliver a seamless shopping journey. The interface is meticulously designed ...",
+    "featured": false,
+    "links": [
+      {
+        "title": "Official Website",
+        "url": "https://lilidan.online"
+      }
+    ],
+    "contentHtml": "<br><p>This project offers an engaging and user-friendly eCommerce platform tailored to deliver a seamless shopping journey. The interface is meticulously designed with Angular, TypeScript, and SCSS, ensuring responsiveness across all devices. Powering the backend operations is a robust combination of Node.js, MySQL, and the secure Paypal API integration, guaranteeing efficient transactions and data management.</p>\n        <br>\n        <figure>\n            <img src=\"https://i.ibb.co/fktnDw1/lilidan-cover.webp\" alt=\"lilidan-1\">\n            <figcaption>Fig.1 - Cover Page</figcaption>\n        </figure>\n        <br>\n        <figure>\n            <img src=\"https://i.ibb.co/4JRnLG4/lilidan-products.webp\" alt=\"lilidan-2\">\n            <figcaption>Fig.2 - Product List</figcaption>\n        </figure>\n        <br>\n        <figure>\n            <img src=\"https://i.ibb.co/sWwbhGS/lilidan-cart.webp\" alt=\"lilidan-3\">\n            <figcaption>Fig.3 - Cart & Payment</figcaption>\n        </figure>\n        <br>\n        <em>*Note: This is a commercial project developed independently.</em>\n        <br>"
+  },
+  {
+    "id": "emotion-eval",
+    "title": "Video Emotion Eval.",
+    "fullTitle": "Zero-shot Emotion Evaluation System for Videos Using Multi-modal Methods and LLMs",
+    "technology": "LLM",
+    "date": "2023 December",
+    "coverImage": "https://i.ibb.co/0scBmsv/vid-emotion.webp",
+    "category": "ai",
+    "tags": [
+      "multi-modal",
+      "ml",
+      "emotion evaluation",
+      "ai",
+      "cv",
+      "llms",
+      "llm",
+      "video analysis"
+    ],
+    "displayTags": [
+      "Emotion Evaluation",
+      "Video Analysis",
+      "Multi-modal",
+      "LLMs"
+    ],
+    "summary": "This research tackles the challenge of assessing emotion intensity in videos. Utilizing multi-modal feature extraction and Large Language Models (LLMs) featu...",
+    "featured": false,
+    "links": [],
+    "contentHtml": "<br><p>This research tackles the challenge of assessing emotion intensity in videos. Utilizing multi-modal feature extraction and Large Language Models (LLMs) feature analysis, we introduce an innovative system for estimating emotion intensity in videos. In experiments encompassing diverse video genres, our system demonstrated high performance, achieving an accuracy of 86.4% in estimating emotion intensities. These results affirm the effectiveness and generalization capability of our proposed system.</p>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/Kzm7NrQ/emotion-eval-post.webp\" alt=\"emo-post\">\n                <figcaption>Fig.1 - Research Presentation Poster</figcaption>\n            </figure>\n            <br>\n            <em>*Note: This is a master capstone project collaborated with my teammates Navneet Ratnakirti, Siqi Chen, Yongxiang Chen. The project is in partnership with Wattch Fitness, and supervised by Prof. Lino Coria Mendoza.</em>\n            <br>"
+  },
+  {
+    "id": "solar-panel",
+    "title": "Solar Farm Mapping",
+    "fullTitle": "Global Solar Panel Farms Mapping through Multispectral Satellite Imagery and Enhanced Swin Transformer Model",
+    "technology": "ViT",
+    "date": "2023 December",
+    "coverImage": "https://i.ibb.co/FnpFQ5P/solar-2.webp",
+    "category": "ai",
+    "tags": [
+      "satellite imagery",
+      "multispectral",
+      "solar energy",
+      "ml",
+      "ai",
+      "cv",
+      "swin transformer",
+      "remote sensing"
+    ],
+    "displayTags": [
+      "Solar Energy",
+      "Multispectral",
+      "Satellite Imagery",
+      "Remote Sensing",
+      "Swin Transformer"
+    ],
+    "summary": "Solar Photovoltaic (PV) technology significantly impacts the world by providing clean energy without emitting greenhouse gases, helping combat climate change...",
+    "featured": true,
+    "links": [
+      {
+        "title": "SSSwin Paper (IEEE CAI 2024)",
+        "url": "https://ieeexplore.ieee.org/abstract/document/10605566"
+      },
+      {
+        "title": "Dataset Paper (ArXiv 2024)",
+        "url": "https://arxiv.org/abs/2404.05180"
+      }
+    ],
+    "contentHtml": "<br><p>\n                Solar Photovoltaic (PV) technology significantly impacts the world by providing clean energy without emitting greenhouse gases, helping combat climate change and reduce pollution. Monitoring solar panel farms is crucial for understanding the global transition to clean energy.\n            </p>\n            <br>\n            <p>\n                Our project aims to create a comprehensive multispectralimage dataset of solar panel farms, enhancing segmentation models. We will propose an improved Swin Transformer Model - Sequential Spectral Swin (SSSwin) tailored for efficient handling of multispectral data. Our goal is to enhance the accuracy and efficiency of solar panel farms mapping, advancing solar energy technology globally.\n            </p>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/CbK1z90/solar-post.webp\" alt=\"solar-post\">\n                <figcaption>Fig.1 - Research Presentation Poster</figcaption>\n            </figure>\n            <br>\n            <em>*Note: This research project is directed and collaborated with Prof. Ryan Rad.</em>\n            <br>"
+  },
+  {
+    "id": "portfolio",
+    "title": "Portfolio Website",
+    "fullTitle": "Portfolio Website - David Yang",
+    "technology": "Vue",
+    "date": "2023 November",
+    "coverImage": "https://i.ibb.co/VWhFBd5/port-ico.webp",
+    "category": "frontend",
+    "tags": [
+      "spa",
+      "portfolio",
+      "frontend",
+      "vue.js",
+      "javascript",
+      "html"
+    ],
+    "displayTags": [
+      "Portfolio",
+      "SPA",
+      "Vue.js",
+      "HTML",
+      "Javascript"
+    ],
+    "summary": "This is a personal portfolio website project. Leveraging the Vue.js framework, JavaScript, and CSS, a responsive Single-Page App has been meticulously crafte...",
+    "featured": false,
+    "links": [
+      {
+        "title": "Official Website",
+        "url": "https://yzyly1992.github.io/"
+      }
+    ],
+    "contentHtml": "<br><p>This is a personal portfolio website project. Leveraging the Vue.js framework, JavaScript, and CSS, a responsive Single-Page App has been meticulously crafted to showcase owner's works and skills in an aesthetically pleasing manner. This project embodies a dedication to presenting a diverse range of works and expertise through intuitive design and functionality, ensuring an engaging experience across different devices.</p>\n        <br>\n        <figure>\n            <img src=\"https://i.ibb.co/9WPRFM7/port-cover.webp\" alt=\"portfolio-1\">\n            <figcaption>Fig.1 - Cover Page</figcaption>\n        </figure>\n        <br>\n        <figure>\n            <img src=\"https://i.ibb.co/85m4S1m/port-work.webp\" alt=\"portfolio-2\">\n            <figcaption>Fig.2 - Project Page</figcaption>\n        </figure>\n        <br>\n        <figure>\n            <img src=\"https://i.ibb.co/fkq9dpX/port-about.webp\" alt=\"portfolio-3\">\n            <figcaption>Fig.3 - About Page</figcaption>\n        </figure>\n        <br>\n        <em>*Note: This is a personal project developed independently.</em>\n        <br>"
+  },
+  {
+    "id": "runway",
+    "title": "Airport Runway Insp.",
+    "fullTitle": "Airport Runway Defects Detection",
+    "technology": "UAV",
+    "date": "2023 October",
+    "coverImage": "https://i.ibb.co/0BzNcxw/runway.webp",
+    "category": "ai",
+    "tags": [
+      "smoothness detection",
+      "segmentation",
+      "ml",
+      "ai",
+      "cv",
+      "uav",
+      "drone imagery",
+      "airport runway"
+    ],
+    "displayTags": [
+      "Airport Runway",
+      "UAV",
+      "Drone Imagery",
+      "Segmentation",
+      "Smoothness Detection"
+    ],
+    "summary": "In the vast and challenging landscapes of northern Canada, where scattered communities heavily rely on air transportation for essential services, remote airp...",
+    "featured": false,
+    "links": [
+      {
+        "title": "Published Paper (MDPI 2024)",
+        "url": "https://www.mdpi.com/2504-446X/8/6/225"
+      }
+    ],
+    "contentHtml": "<br><p>\n                In the vast and challenging landscapes of northern Canada, where scattered communities heavily rely on air transportation for essential services, remote airports face significant challenges such as limited resources, high operational costs, and logistical difficulties. The traditional manual inspection methods, plagued by infrequency, labor-intensity, and subjectivity, exacerbate these issues. \n            </p>\n            <br>\n            <p>\n                This paper proposes a novel solution utilizing modern technology, particularly drones equipped with advanced sensors and computer vision. The project aims to collect precise baseline data from the 117 remote airports in Canada, 94 of which have gravel runways, to enhance safety and infrastructure longevity. The drones will capture high-resolution imagery, and computer vision analysis will be applied to detect runway defects, vegetation issues, and potential hazards for proactive maintenance, presenting a promising approach to address these longstanding challenges in remote airport management.\n            </p>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/hZcnzFh/runway-demo.webp\" alt=\"runway\">\n                <figcaption>Fig.1 - Demo Application</figcaption>\n            </figure>\n            <br>\n            <em>*Note: This research project is leaded by Prof. Michal Aibin and Prof. Lino Coria Mendoza from Northeastern University, and supported by TransCanada and Spexi Geospatial.</em>\n            <br>"
+  },
+  {
+    "id": "wildfire",
+    "title": "Forest Fire Risk Eval.",
+    "fullTitle": "Forest Fire Risk Assessment with Deep Learning Methods and UAV Imagery",
+    "technology": "YOLOv8",
+    "date": "2023 August",
+    "coverImage": "https://i.ibb.co/YfXZrxL/wildfire.webp",
+    "category": "ai",
+    "tags": [
+      "computer vision",
+      "mapping",
+      "ml",
+      "ai",
+      "cv",
+      "yolo",
+      "uav",
+      "object detection",
+      "research"
+    ],
+    "displayTags": [
+      "Research",
+      "Computer Vision",
+      "Object Detection",
+      "YOLO",
+      "UAV",
+      "Mapping"
+    ],
+    "summary": "\"Canada is having its worst fire season in modern history. The fires have burnt more than 20 million acres, casting hazardous smoke over parts of the U.S. an...",
+    "featured": true,
+    "links": [
+      {
+        "title": "Published Paper (MDPI 2024)",
+        "url": "https://www.mdpi.com/2504-446X/8/2/39"
+      }
+    ],
+    "contentHtml": "<br><p>\"Canada is having its worst fire season in modern history. The fires have burnt more than 20 million acres, casting hazardous smoke over parts of the U.S. and stretching Canadian firefighting resources thin.\" <a href=\"https://www.npr.org/2023/07/11/1187105458/this-is-canadas-worst-fire-season-in-modern-history-but-its-not-new\">[NPR]</a></p>\n            <br>\n            <p>Once a fire starts, it becomes extremely challenging to extinguish. The most efficient approach to minimizing losses is by preventing fires from occurring in the first place. Unfortunately, existing systems lack the capability to accurately predict fires. Moreover, traditional monitoring methods have limitations in terms of coverage range, cost, and maintenance.</p>\n            <br>\n            <p>To address these challenges, this research proposes an innovative end-to-end forest fire risk assessment system that combines the YOLOv8 object detection algorithm, UAV imagery, and visualization techniques. This system effectively assesses the risk of forest fires and presents the information in a user-friendly manner for a wider audience.</p>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/f0vrnXg/fire-1.jpg\" alt=\"fire-1\" style=\"max-width: 20rem;\">\n                <figcaption>Fig.1 - Original UAV Image of Forest Trees</figcaption>\n            </figure>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/KGgmzYY/fire-2.jpg\" alt=\"fire-2\" style=\"max-width: 20rem;\">\n                <figcaption>Fig.2 - Prediction Results of Tree Types by YOLOv8</figcaption>\n            </figure>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/QCgx930/fire-3.jpg\" alt=\"fire-3\" style=\"max-width: 20rem;\">\n                <figcaption>Fig.3 - Visualization Results of Fire Risk by Merging and Coloring Techniques</figcaption>\n            </figure>\n            <br>\n            <em>*Note: This research project is leaded by Prof. Michal Aibin and Prof. Lino Coria Mendoza from Northeastern University, and supported by TransCanada and Spexi Geospatial.</em>\n            <br>"
+  },
+  {
+    "id": "wildfire-gee",
+    "title": "Wildfire Prediction",
+    "fullTitle": "Wildfire Prediction with Google Earth Engine and Machine Learning Methods",
+    "technology": "GEE",
+    "date": "2023 July",
+    "coverImage": "https://i.ibb.co/jyKjX8z/wildfire-gee.webp",
+    "category": "ai",
+    "tags": [
+      "google earth engine",
+      "ml",
+      "ai",
+      "cv",
+      "u-net",
+      "machine learning",
+      "deep learning",
+      "cart"
+    ],
+    "displayTags": [
+      "Google Earth Engine",
+      "Machine Learning",
+      "Deep Learning",
+      "CART",
+      "U-Net"
+    ],
+    "summary": "In response to the escalating threat of wildfires, this project seeks to revolutionize wildfire prediction using Google Earth Engine and machine learning met...",
+    "featured": false,
+    "links": [
+      {
+        "title": "Github Repo",
+        "url": "https://github.com/yzyly1992/wildfire-prediction-gee"
+      }
+    ],
+    "contentHtml": "<br><p>In response to the escalating threat of wildfires, this project seeks to revolutionize wildfire prediction using Google Earth Engine and machine learning methods. By leveraging the vast geospatial data repository and processing capabilities of Google Earth Engine, coupled with advanced machine learning algorithms, the project aims to create accurate and proactive wildfire prediction models. These models will utilize historical climate data, soil moisture, vegetation indices, and previous wildfire records to predict the likelihood of future wildfire events. Through this innovative approach, the project endeavors to provide valuable insights for improved wildfire management, resource allocation, and community safety, contributing to more effective disaster mitigation strategies and ecological preservation.</p>\n            <!-- <br>\n            <figure>\n                <img src=\"https://i.ibb.co/jyKjX8z/wildfire-gee.webp\" alt=\"gee-1\">\n                <figcaption>Fig.1 - Wildfire Prediction Result from CART classification model</figcaption>\n            </figure> -->\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/FnPkBLP/wf-malibu.webp\" alt=\"gee-2\">\n                <figcaption>Fig.1 - Wildfire Prediction Result from U-Net model: Malibu</figcaption>\n            </figure>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/QF3whh0/wf-beijing.webp\" alt=\"gee-3\">\n                <figcaption>Fig.2 - Wildfire Prediction Result from U-Net model: Beijing</figcaption>\n            </figure>\n            <br>\n            <em>*Note: This research project is completed independently during the TA position of Machine Learning Course by Prof. Ryan M. Rad.</em>\n            <br>"
+  },
+  {
+    "id": "carbon",
+    "title": "Carbon Mapping",
+    "fullTitle": "Forest Carbon Mapping using Google Earth Engine and Machine Learning Methods",
+    "technology": "GEE",
+    "date": "2023 June",
+    "coverImage": "https://i.ibb.co/TwxdtSC/carbon.webp",
+    "category": "ai",
+    "tags": [
+      "google earth engine",
+      "ml",
+      "ai",
+      "cv",
+      "random forest",
+      "machine learning",
+      "deep learning",
+      "cart"
+    ],
+    "displayTags": [
+      "Google Earth Engine",
+      "Machine Learning",
+      "Deep Learning",
+      "CART",
+      "Random Forest"
+    ],
+    "summary": "To accelerate the global trend of sustainability and enhance our understanding of forest carbon storage capabilities, this project aims to revolutionize the ...",
+    "featured": false,
+    "links": [],
+    "contentHtml": "<br><p>To accelerate the global trend of sustainability and enhance our understanding of forest carbon storage capabilities, this project aims to revolutionize the prediction of forest carbon using Google Earth Engine and machine learning methods. By harnessing the extensive geospatial data repository and processing capabilities of Google Earth Engine, combined with advanced machine learning algorithms, the project seeks to develop accurate and proactive forest carbon mapping models. These models will incorporate historical climate data, vegetation indices, and forest types to predict carbon storage globally.</p>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/5hfh1kz/npp-comparison.webp\" alt=\"carbon-pred\">\n                <figcaption>Fig.1 - Qualitative Result Comparision. Left is ground truth, right is prediction from RandomForest Model. </figcaption>\n            </figure>\n            <br>\n            <em>*Note: This research project is completed independently during the TA position of Machine Learning Course by Prof. Ryan M. Rad.</em>\n            <br>"
+  },
+  {
+    "id": "plant-diary",
+    "title": "Plant Diary",
+    "fullTitle": "Plant Diary - Unfold the Beauty of Your Favorite Plants",
+    "technology": "React Native",
+    "date": "2023 May",
+    "coverImage": "https://i.ibb.co/HtG3wDT/plant-diary-o.webp",
+    "category": "fullstack",
+    "tags": [
+      "backend",
+      "firebase",
+      "frontend",
+      "plantid api",
+      "react native",
+      "expo",
+      "fullstack",
+      "googlemaps api",
+      "mobile dev"
+    ],
+    "displayTags": [
+      "Mobile Dev",
+      "React Native",
+      "Expo",
+      "Firebase",
+      "GoogleMaps API",
+      "PlantId API"
+    ],
+    "summary": "Slogan: \"Unfold the Beauty of Your Favorite Plants: Share their Journey with Plant Diary App!\"",
+    "featured": false,
+    "links": [
+      {
+        "title": "iOS Demo",
+        "url": "https://youtu.be/VOfUR96cOWk"
+      },
+      {
+        "title": "Android Demo",
+        "url": "https://youtu.be/5WW81BhGRCk"
+      },
+      {
+        "title": "Github",
+        "url": "https://github.com/yzyly1992/plant-diary"
+      }
+    ],
+    "contentHtml": "<br><p>Slogan: \"Unfold the Beauty of Your Favorite Plants: Share their Journey with Plant Diary App!\"</p>\n            <br>\n            <p>Are you a plant enthusiast looking to foster your love for growing plants but uncertain about where to find like-minded individuals and how to kickstart your journey? Look no further than the Plant Diary App – it's tailor-made for you! This app serves as a vibrant social platform and community exclusively dedicated to plant lovers. With a user-friendly interface and powerful features, it enables you to connect with fellow enthusiasts, share your greenery triumphs, explore a diverse range of plants, and engage with a community that shares your passion.</p>\n            <br>\n            <h3>Key Features</h3>\n            <ul>\n                <li><strong>Thriving Plant Community: </strong>Our app hosts a passionate and engaged community of plant lovers from all walks of life. Connect, interact, and exchange knowledge with individuals who share your enthusiasm for cultivating and caring for plants.</li>\n                <li><strong>Plant Sharing: </strong>Share your plant-growing journey effortlessly with the community. Upload pictures, jot down notes about your plants' progress, and receive encouraging feedback from fellow enthusiasts. </li>\n                <li><strong>Discover New Plants: </strong>Get inspired by a vast collection of plants curated by the community. Discover new species, learn about their unique traits, and explore a world of botanical wonders.</li>\n                <li><strong>Plant Identification: </strong>Are you unsure about the name of a plant you just encountered? Use the app's plant identification feature to quickly find out its name and learn more about it.</li>\n                <li><strong>Achievement System: </strong>recognise the user’s effort and encourage them to continue using the app for getting more achievement.</li>\n            </ul>\n            <br>\n            <h3>Screenshots</h3>\n            <br>\n            <div class=\"half\">\n            <figure>\n                <img src=\"https://i.ibb.co/zFKFvps/it3-android-1.jpg\" alt=\"plant-1\" style=\"max-width: 20rem;\">\n                <figcaption>Fig.1 - Diary List</figcaption>\n            </figure>\n            <figure>\n                <img src=\"https://i.ibb.co/nsVQ90h/it3-android-5.jpg\" alt=\"plant-2\" style=\"max-width: 20rem;\">\n                <figcaption>Fig.2 - Diary Gallery</figcaption>\n            </figure>\n            <figure>\n                <img src=\"https://i.ibb.co/Lt0596F/it3-android-12.jpg\" alt=\"plant-3\" style=\"max-width: 20rem;\">\n                <figcaption>Fig.3 - Create Screen</figcaption>\n            </figure>\n            <figure>\n                <img src=\"https://i.ibb.co/8XT8m5D/it3-android-11.jpg\" alt=\"plant-4\" style=\"max-width: 20rem;\">\n                <figcaption>Fig.4 - Profile Screen</figcaption>\n            </figure>\n            </div>\n            <br>\n            <em>*Note: This is a group project collaborated with my teammates Wai Kin Chu and Siqi Chen.</em>\n            <br>"
+  },
+  {
+    "id": "mini-twitter",
+    "title": "Mini-Twitter System",
+    "fullTitle": "Mini-Twitter System",
+    "technology": "AWS",
+    "date": "2023 May",
+    "coverImage": "https://i.ibb.co/GWmbm26/mini-twitter.webp",
+    "category": "backend",
+    "tags": [
+      "backend",
+      "cloud computating",
+      "aws",
+      "devops",
+      "distributed systems",
+      "redis",
+      "dynamodb",
+      "springboot"
+    ],
+    "displayTags": [
+      "Distributed Systems",
+      "Cloud Computating",
+      "AWS",
+      "SpringBoot",
+      "Redis",
+      "DynamoDB"
+    ],
+    "summary": "Welcome to the Mini-Twitter project, where we embark on designing and developing a cutting-edge, highly scalable system to offer a range of essential service...",
+    "featured": false,
+    "links": [
+      {
+        "title": "Demo Video",
+        "url": "https://www.youtube.com/watch?v=o65StNRWQ-s"
+      },
+      {
+        "title": "Presentation",
+        "url": "https://docs.google.com/presentation/d/14qx6x6lAGSQmnp1ZgZ3EjCV2xmG4W1kuNmMmrIbf_PI/edit#slide=id.p"
+      },
+      {
+        "title": "Github",
+        "url": "https://github.com/yzyly1992/mini-twitter"
+      }
+    ],
+    "contentHtml": "<br><p>\n                Welcome to the Mini-Twitter project, where we embark on designing and developing a cutting-edge, highly scalable system to offer a range of essential services, including post tweet, read feed, and user-following features. Our primary goal is to create an efficient system that can handle a massive user base while ensuring seamless user experiences.\n            </p>\n            <br>\n            <p>\n                In this exciting venture, we will delve into the world of cache and non-cache strategies, meticulously experimenting and testing their impact on system performance. By doing so, we aim to gain valuable insights into the trade-offs involved and optimize the overall system to deliver lightning-fast response times and impeccable reliability.\n            </p>\n            <br>\n            <h3>Server Implementation</h3>\n            <ul>\n                <li><strong>AWS Serverless Application Model (SAM) </strong>quickly deploys Spring Boot applications to API Gateway and Lambda.</li>\n                <li><strong>Spring Boot Container </strong>manages DB connections, Redis connections and singletons in services, ensuring optimal performance and resource utilization. \n                </li>\n                <li><strong>Redis </strong>plays a pivotal role in our system as a key-value memory store, supporting various data types, including List. This feature-rich memory store enhances data access speeds and enables smooth handling of complex data structures. </li>\n                <li><strong>DynamoDB CRUD Repositories </strong>and DTOs(Data Transfer Objects) make DB  operations straightforward and efficient.</li>\n            </ul>\n            <br>\n            <div>\n                <figure>\n                    <img src=\"https://i.ibb.co/bKqjBZf/twitter-1.png\" alt=\"twitter-1\">\n                    <figcaption>Fig.1 - Original Architecture Design</figcaption>\n                </figure>\n                <br>\n                <figure>\n                    <img src=\"https://i.ibb.co/BV8qtxv/twitter-2.jpg\" alt=\"twitter-2\">\n                    <figcaption>Fig.2 - Bottleneck Analysis</figcaption>\n                </figure>\n            </div>\n            <br>\n            <em>*Note: This is a group project collaborated with my teammates Lin Li and Fangxiao Guo.</em>\n            <br>"
+  },
+  {
+    "id": "ar-image-track",
+    "title": "AR Image Tracking",
+    "fullTitle": "AR Image Tracking System",
+    "technology": "OpenCV",
+    "date": "2023 April",
+    "coverImage": "https://i.ibb.co/6XSTQb4/ar-image-track-o.webp",
+    "category": "cv",
+    "tags": [
+      "computer vision",
+      "keypoint detection",
+      "image tracking",
+      "keypoint matching",
+      "ar",
+      "cv"
+    ],
+    "displayTags": [
+      "Computer Vision",
+      "Keypoint Detection",
+      "Keypoint Matching",
+      "AR",
+      "Image Tracking"
+    ],
+    "summary": "Augmented Reality (AR) is an innovative technology capable of superimposing virtual information onto the real-world environment, offering immense potential a...",
+    "featured": false,
+    "links": [
+      {
+        "title": "Demo Video-1",
+        "url": "https://youtu.be/4bwdhYC6M6k"
+      },
+      {
+        "title": "Demo Video-2",
+        "url": "https://youtu.be/qJnT8BSD8mA"
+      },
+      {
+        "title": "Presentation",
+        "url": "https://docs.google.com/presentation/d/16Ub37KeAaehhQH53XyZkw7uagLL1TJbw9qT8_dZ5MHw/edit?usp=sharing"
+      }
+    ],
+    "contentHtml": "<br><p>\n                Augmented Reality (AR) is an innovative technology capable of superimposing virtual information onto the real-world environment, offering immense potential and value across various industries and in our daily lives. Despite its promise, AR's widespread adoption remains in its early stages due to hardware limitations and the complexity of improving algorithms. This paper delves into a critical component of AR image tracking—the keypoint detection algorithm. This algorithm marks the initial and vital step in AR applications. As image tracking operates in real-time and real-world scenarios, the algorithms must exhibit exceptional qualities, including high speed, accuracy, and resilience to variations and noise.\n            </p>\n            <br>\n            <p>\n                Our study examines both traditional handcrafted keypoint detection algorithms, such as SIFT, SURF, ORB, and cutting-edge deep learning algorithms like SuperPoint, in the context of AR image tracking scenarios. By conducting rigorous tests and comparisons, we aim to identify the strengths and weaknesses of each approach. Additionally, we will address the best practices when implementing AR image tracking using keypoint detection algorithms.\n            </p>\n            <br>\n            <h3>Architecture</h3>\n            <br>\n            <div>\n            <figure>\n                <img src=\"https://i.ibb.co/8YstPjp/ar-image-track-1.png\" alt=\"ar-image-track-1\">\n                <figcaption>Fig.1 - AR Image Tracking Pipeline Design</figcaption>\n            </figure>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/4fNYyrG/ar-image-track-2.png\" alt=\"ar-image-track-2\">\n                <figcaption>Fig.2 - Improved Tracking Pipeline</figcaption>\n            </figure>\n            </div>\n            <br><h3>Result</h3>\n            <br>\n            <table>\n                <caption>Keypoint Detection Algorithms Comparison</caption>\n                <tr>\n                    <th>Detector</th>\n                    <th>Speed(FPS)</th>\n                    <th>Detection Rate</th>\n                    <th>Detection Quality</th>\n                </tr>\n                <tr>\n                    <td>SIFT</td>\n                    <td>15.4</td>\n                    <td>684/705</td>\n                    <td>Good</td>\n                </tr>\n                <tr>\n                    <td>SURF(minHessian=400)</td>\n                    <td>19.0</td>\n                    <td>401/705</td>\n                    <td>OK</td>\n                </tr>\n                <tr>\n                    <td>ORB(nfeature=2000)</td>\n                    <td>23.4</td>\n                    <td>273/705</td>\n                    <td>Poor</td>\n                </tr>\n                <tr>\n                    <td>SuperPoint(CPU)</td>\n                    <td>1.7</td>\n                    <td>643/705</td>\n                    <td>Good</td>\n                </tr>\n            </table>\n            <br>\n            <table>\n                <caption>Improved Tracking Pipeline Result</caption>\n                <tr>\n                    <th>Image Tracking Pipeline</th>\n                    <th>Speed(FPS)</th>\n                    <th>Detection Rate</th>\n                    <th>Detection Quality</th>\n                </tr>\n                <tr>\n                    <td>Original Pipeline with SIFT</td>\n                    <td>15.4</td>\n                    <td>684/705</td>\n                    <td>Good</td>\n                </tr>\n                <tr>\n                    <td>Improved Pipeline with SIFT</td>\n                    <td>33.7</td>\n                    <td>705/705</td>\n                    <td>Good</td>\n                </tr>\n            </table>\n            <br><em>*Note: This is an individual research project.</em>\n            <br>"
+  },
+  {
+    "id": "not-hotdog",
+    "title": "Not Hotdog App",
+    "fullTitle": "Not Hotdog App - Hotdog Identifier",
+    "technology": "Pytorch",
+    "date": "2022 December",
+    "coverImage": "https://i.ibb.co/s2LXrZQ/hotdog.webp",
+    "category": "ai",
+    "tags": [
+      "computer vision",
+      "webapp",
+      "resnet",
+      "flask",
+      "ml",
+      "cv",
+      "pytorch",
+      "yolo",
+      "object detection"
+    ],
+    "displayTags": [
+      "Computer Vision",
+      "Object Detection",
+      "ResNet",
+      "YOLO",
+      "Flask",
+      "Pytorch",
+      "WebApp"
+    ],
+    "summary": "Not Hog Dog Project is inspired by the great HBO show Silicon Valley. In one of the episodes, Jian-Yang was tasked to build an app that’d use AI to recognize...",
+    "featured": false,
+    "links": [
+      {
+        "title": "Silicon Valley",
+        "url": "https://youtu.be/vIci3C4JkL0"
+      },
+      {
+        "title": "Report",
+        "url": "https://docs.google.com/document/d/1bwH0irzHQc309bgvoTuRzuzDEq23_xpi8qjWt7IZ5ro/edit?usp=sharing"
+      },
+      {
+        "title": "Github",
+        "url": "https://github.com/yzyly1992/Not-Hot-Dog-Web-App"
+      }
+    ],
+    "contentHtml": "<br><p>\n                Not Hog Dog Project is inspired by the great HBO show Silicon Valley. In one of the episodes, Jian-Yang was tasked to build an app that’d use AI to recognize food pictures and correctly label them. On the demo day, the app seemed to begin working perfectly without a glitch and labeled a newly-taken picture as “hot dog”. But as other types of food pictures were attempted, the app was only able to label the rest of them as “not hot dog”...\n            </p>\n            <br>\n            <p>\n                The objective of this project is to create an application identical to the one demonstrated in the show. Our approach involves several key steps:\n            </p>\n            <div>\n                <ul>\n                    <li><strong>Model Training: </strong>We will commence by training two Convolutional Neural Network (CNN) models, YOLOv5 and ResNet152 using a carefully curated Hotdog dataset. This dataset will serve as the foundation for teaching the models to recognize and differentiate hotdog images accurately.</li>\n                    <li><strong>Model Deployment: </strong>Once the CNN models are trained, we will select the best-performing model and deploy it on a server. This step ensures that the model's capabilities are accessible over the internet and can be utilized by the web app.</li>\n                    <li><strong>Web App Development: </strong>The next phase involves building a user-friendly web application that connects to the server. This web app will allow users to upload images or use their camera to capture pictures. The uploaded images will then be processed by the deployed model to determine whether they contain hotdogs or not.</li>\n                </ul>\n            </div>\n            <br>\n            <div>\n            <figure>\n                <img src=\"https://i.ibb.co/f0GWP3R/hotdog.jpg\" alt=\"hotdog\" style=\"max-width: 20rem;\">\n                <figcaption>Fig.1 - Not Hotdog Web App Interface</figcaption>\n            </figure>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/s2LXrZQ/hotdog.webp\" alt=\"hotdog-2\" style=\"max-width: 20rem;\">\n                <figcaption>Fig.2 - Hotdog Image Detection Result</figcaption>\n            </figure>\n            </div>\n            <br><h3>Test Result</h3>\n            <br>\n            <table>\n                <caption>CNN Model Comparison</caption>\n                <tr>\n                    <th>Metric</th>\n                    <th>ResNet152</th>\n                    <th>YOLOv5</th>\n                </tr>\n                <tr>\n                    <td>Accuracy</td>\n                    <td>85.36%</td>\n                    <td>97.6%</td>\n                </tr>\n                <tr>\n                    <td>True Positive Rate</td>\n                    <td>90.16%</td>\n                    <td>98.4%</td>\n                </tr>\n                <tr>\n                    <td>False Positive Rate</td>\n                    <td>19.3%</td>\n                    <td>3.2%</td>\n                </tr>\n            </table>\n            <br><em>*Note: This is a group project collaborated with my teammates Xiaofeng Yue and Jiaqing Liu.</em>\n            <br>"
+  },
+  {
+    "id": "trip-planner",
+    "title": "Trip Planner",
+    "fullTitle": "Trip Planner - Route Planning Algorithm",
+    "technology": "Search Algorithm",
+    "date": "2022 December",
+    "coverImage": "https://i.ibb.co/16kf8Xm/trip-plan-gmap.webp",
+    "category": "ai",
+    "tags": [
+      "route planning",
+      "a-star",
+      "greedy",
+      "ai",
+      "csp",
+      "algo",
+      "hill-climb",
+      "search algorithm",
+      "dijkstra"
+    ],
+    "displayTags": [
+      "Route Planning",
+      "Search Algorithm",
+      "Dijkstra",
+      "Greedy",
+      "Hill-Climb",
+      "A-star",
+      "CSP"
+    ],
+    "summary": "My friend Jack is planning a trip to Vancouver for the winter break vacation with his girlfriend. Their flight to YVR is on Saturday night, December 17th. Th...",
+    "featured": false,
+    "links": [
+      {
+        "title": "Colab",
+        "url": "https://colab.research.google.com/drive/1--7N4hmlBTO9TE9ZROiF-phpM2lB7dw0?usp=sharing"
+      }
+    ],
+    "contentHtml": "<br><h3>Real Life Problem</h3>\n            <br>\n            <p>\n                My friend Jack is planning a trip to Vancouver for the winter break vacation with his girlfriend. Their flight to YVR is on Saturday night, December 17th. They have already booked a hotel that they believe is cheap, convenient, and of good quality - the Century Plaza Hotel, located in the center of Downtown Vancouver. They decided to rent a car to transition from place to place during the trip to save time and have access to more distant locations. They have selected six places to visit in Vancouver after conducting their research. The six places are as follows:\n            </p>\n            <ol>\n                <li>Granville Island</li>\n                <li>Stanley Park</li>\n                <li>Lynn Canyon Park</li>\n                <li>Queen Elizabeth Park</li>\n                <li>Cypress Mountain</li>\n                <li>Golden Ears</li>\n            </ol>\n            <p>\n                They need a route plan that can shorten their overall trip time. However, there are certain rules they must follow:\n            </p>\n            <ol>\n                <li>They must stay at the Century Plaza Hotel throughout the entire trip; switching to other hotels is not allowed.</li>\n                <li>They want to visit all six places, without missing any or adding extra ones.</li>\n                <li>Each place can only be visited once; no repeated visits are allowed.</li>\n                <li>Every day's trip must start and end at the hotel.</li>\n                <li>They only have 6 hours each day for visiting, as they don't want the trip to be exhausting.</li>\n                <li>If the trip of a day takes less than 6 hours and it is not the last day, it will still be counted as a 6-hour trip.</li>\n                <li>The last day's trip will be counted with the actual hours spent.</li>\n                <li>Currently, they don't need to consider the business hours of each place.</li>\n            </ol>\n            <p>\n                With the above rules in mind, they need to create the best route plan for the whole trip.\n            </p>\n            <br>\n            <h3>Data Preparation</h3>\n            <br>\n            <p>We collected the transition time data and staying time data from Google Maps App. We then summarized the data in the following chart (A-G represent the six places):</p>\n            <table>\n                <caption>Visiting Time (Transition Time + Staying Time)</caption>\n                <tr>\n                    <th>Time (hour)</th>\n                    <th>A</th>\n                    <th>B</th>\n                    <th>C</th>\n                    <th>D</th>\n                    <th>E</th>\n                    <th>F</th>\n                    <th>G</th>\n                </tr>\n                <tr>\n                    <td>A</td>\n                    <td>-</td>\n                    <td>3.25</td>\n                    <td>3.1</td>\n                    <td>2.5</td>\n                    <td>1.3</td>\n                    <td>4.6</td>\n                    <td>3.4</td>\n                </tr>\n                <tr>\n                    <td>B</td>\n                    <td>0.25</td>\n                    <td>-</td>\n                    <td>3.3</td>\n                    <td>2.6</td>\n                    <td>1.25</td>\n                    <td>4.8</td>\n                    <td>3.2</td>\n                </tr>\n                <tr>\n                    <td>C</td>\n                    <td>0.2</td>\n                    <td>3.4</td>\n                    <td>-</td>\n                    <td>2.3</td>\n                    <td>1.5</td>\n                    <td>4.4</td>\n                    <td>3.2</td>\n                </tr>\n                <tr>\n                    <td>D</td>\n                    <td>0.6</td>\n                    <td>3.7</td>\n                    <td>3.5</td>\n                    <td>-</td>\n                    <td>1.6</td>\n                    <td>4.5</td>\n                    <td>3.1</td>\n                </tr>\n                <tr>\n                    <td>E</td>\n                    <td>0.3</td>\n                    <td>3.25</td>\n                    <td>3.4</td>\n                    <td>2.5</td>\n                    <td>-</td>\n                    <td>4.75</td>\n                    <td>3.1</td>\n                </tr>\n                <tr>\n                    <td>F</td>\n                    <td>0.8</td>\n                    <td>4</td>\n                    <td>3.5</td>\n                    <td>2.6</td>\n                    <td>1.9</td>\n                    <td>-</td>\n                    <td>3.5</td>\n                </tr>\n                <tr>\n                    <td>G</td>\n                    <td>1.2</td>\n                    <td>4.2</td>\n                    <td>4.2</td>\n                    <td>3.0</td>\n                    <td>2.1</td>\n                    <td>5.3</td>\n                    <td>-</td>\n                </tr>\n            </table>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/0YFQGNg/trip-plan-gmap-o.webp\" alt=\"trip-planner-2\">\n                <figcaption>Fig.1 - Collect Transit Data from Google Maps</figcaption>\n            </figure>\n            <br>\n            <h3>Methodology and Result</h3>\n            <br>\n            <p>\n                The algorithms we researched include Brute force (DFS and BFS), Greedy, and Dijkstra, which we learned from CS5800. Additionally, we delved further into some potential Artificial Intelligence Algorithms, including Hill-Climbing Algorithm, Random Restart Hill-Climbing, A-star Algorithm, and Constraint Satisfaction Problem (CSP) Algorithm. All these algorithms can solve this problem successfully. However, their performances vary.\n            </p>\n            <br>\n            <table>\n                <caption>Algorithm Comparison</caption>\n                <tr>\n                    <th>Algorithm</th>\n                    <th>Optimal Solution</th>\n                    <th>Run Time</th>\n                    <th>Implementation Difficulty</th>\n                    <th>Time Complexity</th>\n                    <th>Space Complexity</th>\n                </tr>\n                <tr>\n                    <td>Brute Force</td>\n                    <td>Y</td>\n                    <td>48.0</td>\n                    <td>Easy</td>\n                    <td>O(n!)</td>\n                    <td>O(n!)</td>\n                </tr>\n                <tr>\n                    <td>Greedy</td>\n                    <td>N</td>\n                    <td>0.26</td>\n                    <td>Medium</td>\n                    <td>O(n<sup>2</sup>)</td>\n                    <td>O(n)</td>\n                </tr>\n                <tr>\n                    <td>Dijkstra</td>\n                    <td>Y</td>\n                    <td>61.5</td>\n                    <td>Medium</td>\n                    <td>O(b<sup>d</sup>)</td>\n                    <td>O(n!)</td>\n                </tr>\n                <tr>\n                    <td>Hill-Climb</td>\n                    <td>N</td>\n                    <td>2.9</td>\n                    <td>Easy</td>\n                    <td>O(inf.)</td>\n                    <td>O(n)</td>\n                </tr>\n                <tr>\n                    <td>Random Restart</td>\n                    <td>N</td>\n                    <td>27.7</td>\n                    <td>Easy</td>\n                    <td>O(inf.)</td>\n                    <td>O(n)</td>\n                </tr>\n                <tr>\n                    <td>A-star</td>\n                    <td>Y</td>\n                    <td>47.8</td>\n                    <td>Hard</td>\n                    <td>O(b<sup>d</sup>)</td>\n                    <td>O(n!)</td>\n                </tr>\n                <tr>\n                    <td>CSP</td>\n                    <td>Y</td>\n                    <td>N/A</td>\n                    <td>Hard</td>\n                    <td>N/A</td>\n                    <td>N/A</td>\n                </tr>\n            </table>\n            <br>\n            <p>\n                The Greedy algorithm is the fastest among these 7 algorithms. It can help us obtain a good solution, but not necessarily an optimal one. The Hill-Climbing Algorithm is the second fastest algorithm. It did find the optimal solution for our real-life problem example, but it cannot guarantee to always find the optimal solution. Random Restart Hill-Climbing can improve the solution if the problem is complicated, but it also cannot guarantee to find the optimal solution, even with infinite restarts.\n            </p>\n            <br>\n            <p>\n                The main ideas of A-star and Dijkstra are very similar. They both use greedy methods to extend the search and are capable of finding the optimal solution. A-star's performance is better than Dijkstra, while Dijkstra's implementation is slightly simpler than A-star. Breadth-first search and depth-first search are the worst in terms of performance. However, both of them guarantee to find an optimal solution, and DFS has better space complexity than BFS.\n            </p>\n            <br><em>*Note: This is a group project collaborated with my teammates Xilong Cai and Fangxiao Guo.</em>\n            <br>"
+  },
+  {
+    "id": "ar-idol",
+    "title": "AR Idol",
+    "fullTitle": "AR Idol - WebAR Development",
+    "technology": "ThreeJS",
+    "date": "2022 May",
+    "coverImage": "https://i.ibb.co/0fJw3gx/ar-idol.webp",
+    "category": "cv",
+    "tags": [
+      "image tracking",
+      "mindar",
+      "ar",
+      "frontend",
+      "cv",
+      "animation",
+      "webar",
+      "gltf",
+      "threejs",
+      "augmented reality"
+    ],
+    "displayTags": [
+      "Augmented Reality",
+      "Image Tracking",
+      "WebAR",
+      "ThreeJS",
+      "MindAR",
+      "GLTF",
+      "Animation"
+    ],
+    "summary": "The client's requirements for the WebAR app include the following functions:",
+    "featured": false,
+    "links": [
+      {
+        "title": "Demo Video",
+        "url": "https://youtube.com/shorts/tWANo72YiYI?feature=share"
+      }
+    ],
+    "contentHtml": "<br><p>\n                The client's requirements for the WebAR app include the following functions:\n            </p>\n            <ul>\n                <li>Detection of a target image to display the idol character in a 3D model.</li>\n                <li>Ensuring that the idol model can track and follow the movement of the target image.</li>\n                <li>Converting the 3D model from .3ds format to a compatible format for WebAR and adding a waving animation to the model.</li>\n                <li>Implementing interactivity, allowing users to touch the model to trigger the waving animation.</li>\n                <li>Capture a photo of AR idol when clicking the capture button.</li>\n                <li>The captured photo should have an art frame overlaying on the top.</li>\n            </ul>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/0fJw3gx/ar-idol.webp\" alt=\"webar\" style=\"max-width: 20rem;\">\n                <figcaption>Fig.1 - AR Idol Web App Screenshot on Mobile</figcaption>\n            </figure>\n            <br>\n            <em>*Note: This is a commercial project completed independently.</em>\n            <br>"
+  },
+  {
+    "id": "bugtech-ar",
+    "title": "BugTech AR",
+    "fullTitle": "BugTech AR - Entrepreneurship",
+    "technology": "Unity",
+    "date": "2021 Jan - 2022 Mar",
+    "coverImage": "https://i.ibb.co/XjP6RjZ/bugtech-r.webp",
+    "category": "cv",
+    "tags": [
+      "ios",
+      "ar",
+      "unity",
+      "cv",
+      "android",
+      "entrepreneurship",
+      "social game",
+      "game",
+      "augmented reality"
+    ],
+    "displayTags": [
+      "Entrepreneurship",
+      "Augmented Reality",
+      "Social Game",
+      "Unity",
+      "iOS",
+      "Android"
+    ],
+    "summary": "\"BugTech is a pioneering team committed to the design and development of Augmented Reality (AR) experiences. Our primary focus lies in providing tailored AR ...",
+    "featured": false,
+    "links": [
+      {
+        "title": "YouTube Channel",
+        "url": "https://www.youtube.com/@bugtech3030"
+      },
+      {
+        "title": "Website",
+        "url": "https://bugtech.com.cn"
+      },
+      {
+        "title": "Linkedin",
+        "url": "https://www.linkedin.com/company/bugtech-ar"
+      }
+    ],
+    "contentHtml": "<br><h3>About</h3>\n            <br>\n            <p>\n                \"BugTech is a pioneering team committed to the design and development of Augmented Reality (AR) experiences. Our primary focus lies in providing tailored AR solutions for businesses, while also exploring and innovating consumer-oriented applications. By seamlessly blending AR technology with spatial design expertise, we passionately craft cutting-edge, high-quality AR content and products to redefine the way people interact with the world.\"\n            </p>\n            <br>\n            <h3>Role and Responsibility</h3>\n            <br>\n            <p>\n                As the Co-Founder and Technical Director, my primary responsibilities encompass the following key areas:\n            </p>\n            <ul>\n                <li>Leading and overseeing the development of 3D content, encompassing 3D models, animations, and interactive elements.</li>\n                <li>Spearheading the development of core Augmented Reality functionalities within Unity and ensuring the successful delivery of apps on various mobile platforms as per client requirements.</li>\n                <li>Strategically promoting our business and engaging with potential clients both online and in-person.</li>\n                <li>Negotiating and initiating contracts with clients to establish partnerships.</li>\n                <li>Crafting compelling pitch presentations for capital fundraising initiatives.</li>\n            </ul>\n            <h3>Project Showcase</h3>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/tzc99kw/ar-projects.webp\" alt=\"ar-projects\">\n                <figcaption>Fig.1 - AR Image Tracking, Object Tracking, Business Card, Outdoor Tracking </figcaption>\n            </figure>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/PYZ3GLP/ar-city.webp\" alt=\"ar-city\">\n                <figcaption>Fig.2 - Urban Social AR App Demo</figcaption>\n            </figure>\n            <br><em>*Note: Check out more projects on the BugTech YouTube channel.</em>\n            <br>"
+  },
+  {
+    "id": "pwp-lib",
+    "title": "PWP Asset Library",
+    "fullTitle": "PWP Asset Library - Asset Management System",
+    "technology": "React",
+    "date": "2020 April",
+    "coverImage": "https://i.ibb.co/P62wHCM/pwp-lib-1.webp",
+    "category": "fullstack",
+    "tags": [
+      "digital asset management",
+      "python",
+      "backend",
+      "frontend",
+      "react",
+      "fullstack",
+      "redux",
+      "shell script"
+    ],
+    "displayTags": [
+      "Digital Asset Management",
+      "React",
+      "Redux",
+      "Python",
+      "Shell Script"
+    ],
+    "summary": "This project aims to address the challenge of slow and incomplete asset searches on the company server by implementing an efficient asset management system. ...",
+    "featured": false,
+    "links": [
+      {
+        "title": "Demo Video",
+        "url": "https://youtu.be/zw_E9VzDbkY"
+      }
+    ],
+    "contentHtml": "<br><p>\n                This project aims to address the challenge of slow and incomplete asset searches on the company server by implementing an efficient asset management system. Utilizing Python and batch scripting, I effectively tracked and processed asset updates, while employing React and Redux to create a responsive user interface. This system significantly enhanced the efficiency of the design process, receiving positive feedback and appreciation from my colleagues.\n            </p>\n            <br>\n            <h3>Sceenshot</h3>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/P62wHCM/pwp-lib-1.webp\" alt=\"pwp-lib-1\">\n                <figcaption>Fig.1 - Main Interface with Search and Category</figcaption>\n            </figure>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/Hx3kVbf/pwp-lib-2.webp\" alt=\"pwp-lib-2\">\n                <figcaption>Fig.2 - Asset Detail Section</figcaption>\n            </figure>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/SvwrzcT/pwp-lib-3.webp\" alt=\"pwp-lib-3\">\n                <figcaption>Fig.3 - Wiki Info Section</figcaption>\n            </figure>\n            <br><em>*Note: This is an in-house development project completed independently.</em>\n            <br>"
+  },
+  {
+    "id": "python-web",
+    "title": "Python Web Tutorial",
+    "fullTitle": "Python Web Tutorial",
+    "technology": "Python",
+    "date": "2019 Jan - 2020 May",
+    "coverImage": "https://i.ibb.co/yYZFCmG/aodabo-o.webp",
+    "category": "fullstack",
+    "tags": [
+      "web development",
+      "python",
+      "backend",
+      "full stack",
+      "shell script",
+      "frontend",
+      "search",
+      "fullstack",
+      "tutorial"
+    ],
+    "displayTags": [
+      "Python",
+      "Web Development",
+      "Full Stack",
+      "Tutorial",
+      "Shell Script",
+      "Search"
+    ],
+    "summary": "This tutorial is a culmination of Mr. Liao Xuefeng's 2016 Python 3 tutorial, and enriched with the latest frontend technologies. Instead of relying on establ...",
+    "featured": false,
+    "links": [
+      {
+        "title": "Github Repo",
+        "url": "https://github.com/yzyly1992/2019_Python_Web_Dev"
+      },
+      {
+        "title": "Official Website",
+        "url": "https://aodabo.tech"
+      }
+    ],
+    "contentHtml": "<br><p>\n                This tutorial is a culmination of Mr. Liao Xuefeng's 2016 Python 3 tutorial, and enriched with the latest frontend technologies. Instead of relying on established and convenient Python web development frameworks like Flask or Django, this tutorial takes a ground-up approach, guiding readers through building a web application from scratch.\n            </p>\n            <br>\n            <p>\n                The tutorial covers a wide range of topics, starting with setting up the database, constructing the web framework, implementing the ORM (Object-Relational Mapping), establishing the MVC (Model-View-Controller) pattern, creating APIs, and finally crafting frontend pages using CSS/HTML, JavaScript, and DOM manipulation. Moreover, it includes detailed code examples and thorough explanations to ensure readers have a comprehensive understanding of each step in the website development process.\n            </p>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/yYZFCmG/aodabo-o.webp\" alt=\"aodabo-1\">\n                <figcaption>Fig.1 - Home Page</figcaption>\n            </figure>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/fQfJ3TB/aodabo-2.webp\" alt=\"aodabo-2\">\n                <figcaption>Fig.2 - Article Page</figcaption>\n            </figure>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/0QMTTsL/aodabo-3.webp\" alt=\"aodabo-3\">\n                <figcaption>Fig.3 - Management Page</figcaption>\n            </figure>\n            <br><em>*Note: This tutorial is original in Chinese and finished independently.</em>\n            <br>"
+  },
+  {
+    "id": "time-travel",
+    "title": "Time Traveler VR",
+    "fullTitle": "Time Traveler VR",
+    "technology": "Unity",
+    "date": "2019 May",
+    "coverImage": "https://i.ibb.co/C0sdwz4/time-travel.webp",
+    "category": "cv",
+    "tags": [
+      "ar",
+      "unity",
+      "virtual reality",
+      "cv",
+      "landscape architecture",
+      "game"
+    ],
+    "displayTags": [
+      "Virtual Reality",
+      "Unity",
+      "Landscape Architecture"
+    ],
+    "summary": "The landscape process exerts a slow, silent, yet powerful impact on our world and daily lives. As contemporary humans, immersed in the struggles of the prese...",
+    "featured": false,
+    "links": [
+      {
+        "title": "1938 Video",
+        "url": "https://youtu.be/_yNQEDKMntM"
+      },
+      {
+        "title": "2019 Video",
+        "url": "https://youtu.be/DicsTsy92cs"
+      },
+      {
+        "title": "2509 Video",
+        "url": "https://youtu.be/J8rNCAIOXWs"
+      }
+    ],
+    "contentHtml": "<br><p>\n                The landscape process exerts a slow, silent, yet powerful impact on our world and daily lives. As contemporary humans, immersed in the struggles of the present, it becomes incredibly challenging for us to grasp the significance of past events or foresee the implications for the future. Here, the role of a landscape architect becomes crucial, as they serve as communicators and advocates, drawing attention to these issues for the public's awareness.\n            </p>\n            <br>\n            <p>\n                In this context, virtual reality emerges as a groundbreaking design medium, offering unique qualities that have the potential to effectively convey such complex problems compared to traditional media. This project aims to explore the possibilities of interpreting the landscape process through innovative means, leveraging immersive virtual environments and first-person storytelling.\n            </p>\n            <br>\n            <p>\n                By harnessing the power of virtual reality, the project seeks to create a profound and engaging experience for users, enabling them to comprehend the profound impacts of landscape processes in a more tangible and immersive manner. Through this novel approach, the project aspires to raise awareness, foster a deeper understanding of our environment, and encourage positive actions toward sustainable and responsible site development.\n            </p>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/QKzFbKQ/time-travel-1.webp\" alt=\"time-travel-1\">\n                <figcaption>Fig.1 - Downtown Providence in 1938</figcaption>\n            </figure>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/d4bQpww/time-travel-2.webp\" alt=\"time-travel-2\">\n                <figcaption>Fig.2 - Downtown Providence in 2019</figcaption>\n            </figure>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/C0sdwz4/time-travel.webp\" alt=\"time-travel-3\">\n                <figcaption>Fig.3 - Downtown Providence in 2509</figcaption>\n            </figure>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/6tQWJF7/time-travel-4.webp\" alt=\"time-travel-4\">\n                <figcaption>Fig.4 - Downtown Providence in 2509</figcaption>\n            </figure>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/yyTrBb6/time-travel-5.webp\" alt=\"time-travel-5\" style=\"max-width: 20rem;\">\n                <figcaption>Fig.5 - VR Experience</figcaption>\n            </figure>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/CBPc9mb/time-travel-7.webp\" alt=\"time-travel-6\" style=\"max-width: 20rem;\">\n                <figcaption>Fig.6 - VR Experience</figcaption>\n            </figure>\n            <br><em>*Note: This is a Landscape Architecture Thesis Project instructed by Prof. Robyn Reed.</em>\n            <br>"
+  },
+  {
+    "id": "robot",
+    "title": "Robotics Projects",
+    "fullTitle": "Robotics Projects - Arduino & C++",
+    "technology": "C++",
+    "date": "2018 December",
+    "coverImage": "https://i.ibb.co/HP7Q6hc/robot.webp",
+    "category": "other",
+    "tags": [
+      "embedded",
+      "c++",
+      "arduino",
+      "robotics",
+      "sensor"
+    ],
+    "displayTags": [
+      "Robotics",
+      "Arduino",
+      "Sensor",
+      "C++"
+    ],
+    "summary": "The Robotics Projects consist of a series of innovative experiments involving various sensors and robotic designs.",
+    "featured": false,
+    "links": [
+      {
+        "title": "LED Bracelet Demo",
+        "url": "https://youtu.be/sWkNcqLD7fI"
+      },
+      {
+        "title": "Robot Laka Demo",
+        "url": "https://youtu.be/zaSvLJDkxlU"
+      }
+    ],
+    "contentHtml": "<br><p>\n                The Robotics Projects consist of a series of innovative experiments involving various sensors and robotic designs.\n            </p>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/w646nTn/robot-laka.webp\" alt=\"robot-1\">\n                <figcaption>Fig.1 - Robot Laka</figcaption>\n            </figure>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/QpRWFY6/glove-echo.webp\" alt=\"robot-2\">\n                <figcaption>Fig.2 - Echo Glove</figcaption>\n            </figure>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/YcT6SmW/bracelet.webp\" alt=\"robot-3\">\n                <figcaption>Fig.3 - LED Bracelet</figcaption>\n            </figure>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/ZV7JYkb/speaker.webp\" alt=\"robot-4\">\n                <figcaption>Fig.4 - Cymatic Speaker</figcaption>\n            </figure>\n            <br>"
+  },
+  {
+    "id": "city-ar",
+    "title": "City Explorer AR",
+    "fullTitle": "City Explorer AR - GPS & Space Tracking",
+    "technology": "ARKit",
+    "date": "2018 December",
+    "coverImage": "https://i.ibb.co/W2q34Qr/city-ar.webp",
+    "category": "cv",
+    "tags": [
+      "mapbox",
+      "ar",
+      "space tracking",
+      "unity",
+      "gps",
+      "cv",
+      "placenote",
+      "arkit",
+      "augmented reality"
+    ],
+    "displayTags": [
+      "Augmented Reality",
+      "Space Tracking",
+      "GPS",
+      "Mapbox",
+      "Placenote",
+      "ARKit",
+      "Unity"
+    ],
+    "summary": "The primary objective of this project is to utilize GPS location and AR Space Tracking techniques to entice people into exploring points of interest within t...",
+    "featured": false,
+    "links": [
+      {
+        "title": "Demo Video",
+        "url": "https://youtu.be/JyIT2HlyM4g"
+      }
+    ],
+    "contentHtml": "<br><p>\n                The primary objective of this project is to utilize GPS location and AR Space Tracking techniques to entice people into exploring points of interest within the city.\n            </p>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/TwYpwFy/city-1.webp\" alt=\"city-1\">\n                <figcaption>Fig.1 - Home Screen, GPS Location, Character Info & Menu</figcaption>\n            </figure>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/1G2MsZg/city-2.webp\" alt=\"city-2\">\n                <figcaption>Fig.2 - Load AR Content after the Detection of the Target Space</figcaption>\n            </figure>\n            <br>\n            <figure>\n                <img src=\"https://i.ibb.co/3hBpmDN/city-3.webp\" alt=\"city-3\">\n                <figcaption>Fig.3 - AR Interaction</figcaption>\n            </figure>\n            <br><em>*Note: 2018 Placenote Video Challenge Award Winner</em>\n            <br>"
+  }
+]
