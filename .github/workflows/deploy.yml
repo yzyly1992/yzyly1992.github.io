@@ -34,8 +34,17 @@ jobs:
       - name: Install dependencies
         run: npm ci || npm install
 
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
       - name: Build with Vite
         run: npm run build
+
+      - name: Verify production entry point
+        run: |
+          test -f dist/index.html
+          grep -q 'type="module" crossorigin src="/assets/' dist/index.html
+          ! grep -q 'src="/src/main.js"' dist/index.html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
