@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>David Yang - Redirecting...</title>
+  <script>
+    // GitHub Pages SPA redirect: preserves path by converting to hash route
+    var path = window.location.pathname;
+    var search = window.location.search;
+    var hash = window.location.hash;
+    window.location.replace('/#' + path + (search ? '?' + search : '') + (hash ? hash : ''));
+  </script>
+</head>
+<body>
+  <p>Redirecting to <a href="/">David Yang's Portfolio</a>...</p>
+</body>
+</html>
